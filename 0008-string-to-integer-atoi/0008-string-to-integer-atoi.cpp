@@ -2,11 +2,13 @@ class Solution {
 public:
     int myAtoi(string str) {
         int sign = 1, base = 0, i = 0;
-        while (str[i] == ' ') { i++; }
+        while (str[i] == ' ') { i++; }   // skipping the whitespaces
         if (str[i] == '-' || str[i] == '+') {
             sign = 1 - 2 * (str[i++] == '-'); 
         }
         while (str[i] >= '0' && str[i] <= '9') {
+            
+            // to avoid integer overflow
             if (base >  INT_MAX / 10 || (base == INT_MAX / 10 && str[i] - '0' > 7)) {
                 if (sign == 1) return INT_MAX;
                 else return INT_MIN;
