@@ -14,20 +14,12 @@ class Solution{
         int ans = 0;
         int flag =0;
         if(str[0] == '-')flag=1;
-        for(int i=0;i<str.length();i++){
-            if((str[i] < '0' || str[i] >'9')){
-                if(i==0 && str[i] == '-')continue;
-                return -1;
-            }
-        }
-        int j=str.length()-1;
-        int i=1;
-        while(j>=0){
-            ans += (str[j]-'0') * i;
-            // cout << ans<< " ";
-            i *= 10;
-            j--;
-            if(str[j] == '-')break;
+        int i=0;
+        if(flag)i=1;
+        while(i<str.length()){
+            if(str[i] < '0' || str[i] >'9' )return -1;
+            ans = ans*10 + (str[i] - '0');
+            i++;
         }
         
         if(flag == 1)return -1*ans;
