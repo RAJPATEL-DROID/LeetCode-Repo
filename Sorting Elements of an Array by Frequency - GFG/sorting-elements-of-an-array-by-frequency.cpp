@@ -4,10 +4,8 @@ using namespace std;
 void solve(){
     int n;cin >> n;
     unordered_map<int,int> m;
-    vector<int> v;
     priority_queue<pair<int,int> > maxheap;
     
-
     for(int i = 0; i < n; i++){
         int c; cin >> c;
         m[c]++;
