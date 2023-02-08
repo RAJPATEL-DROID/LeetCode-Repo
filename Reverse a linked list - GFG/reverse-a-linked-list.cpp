@@ -32,23 +32,40 @@ struct Node
 class Solution
 {
     public:
+    // Recursive Method for changing the pointer of a node
+    struct Node* Recursive(struct Node* node){
+        if(node == NULL || node->next == NULL)return node;
+        Node* nextNode = Recursive(node->next);
+        node->next->next = node;
+        node->next = NULL;
+        return nextNode;
+        
+    }
+    
     //Function to reverse a linked list.
     struct Node* reverseList(struct Node *head)
     {
         // code here
-        // return head of reversed list
-        Node* curr = head;
-        Node* frwd = curr->next;
-        Node* prev = head;
-        curr->next = NULL;
+    
+    // Iterative Method
+        // Node* curr = head;
+        // Node* frwd = curr->next;
+        // Node* prev = head;
+        // curr->next = NULL;
         
-        while(frwd != NULL){
-            prev  = curr;
-            curr = frwd;
-            frwd = curr->next;
-            curr->next = prev;
-        }
-        return curr;
+        // while(frwd != NULL){
+        //     prev  = curr;
+        //     curr = frwd;
+        //     frwd = curr->next;
+        //     curr->next = prev;
+        // }
+        // return curr;
+        
+
+    // Recursive Method
+        struct Node* newHead = Recursive(head);
+        return newHead;
+        
     }
     
 };
