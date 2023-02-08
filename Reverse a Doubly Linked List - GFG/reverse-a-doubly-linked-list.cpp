@@ -121,18 +121,30 @@ Node* reverseDLL(Node * head)
     // return head;
     
     // 2. We change the previous and next pointers value for all node
+    // pointer to a node 
+    Node* prev = NULL;
     Node* curr = head;
-    Node* forward = NULL;
-    Node* temp = NULL;
-    
-    while(curr != NULL){
-        forward = curr->next;
-        curr->next = curr->prev;
-        curr->prev = forward;
-        temp = curr;
-        curr = forward;
+    // Node after the current node.
+    Node* frd = head->next;
+
+    //condition for null
+    while(curr!=NULL){
+
+        //point the nextof current to prev(which is null)
+        curr->next = prev;
+        //point the prev of curr to the node which is after the current'
+         curr->prev = frd;
+        //move prev to current 
+        prev = curr;
+        // move curr to next.
+        curr = frd;
+        //cheak condition for frd.
+        if(frd!=NULL){
+            //move frd to their next node.
+            frd = frd->next;
+        }
     }
-    return temp;
+    return prev;
 }
 
 
