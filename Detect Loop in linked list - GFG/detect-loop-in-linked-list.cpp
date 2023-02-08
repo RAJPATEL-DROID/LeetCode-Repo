@@ -55,7 +55,7 @@ class Solution
         while(fast != NULL && fast->next != NULL){
             fast = fast->next->next;
             slow = slow->next;
-            if(fast != NULL && (slow->next == fast->next) )return true;
+            if(slow == fast )return true;
         }
         return false;       
     }
