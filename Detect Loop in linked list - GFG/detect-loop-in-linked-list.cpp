@@ -49,6 +49,8 @@ class Solution
     bool detectLoop(Node* head)
     {
         // your code here
+        
+        // This is called Floyd's Cycle Detection Algorithm
         Node* fast = head;
         Node* slow = head;
         
