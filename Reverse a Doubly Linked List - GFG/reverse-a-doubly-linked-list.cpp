@@ -103,24 +103,36 @@ Node* reverseDLL(Node * head)
     // 2 Way of doing this
     
     // 1. we can swap the values of head & tail and move both pntrs
+    // Node* curr = head;
+    // Node* tail = head;
+    // int j=1;
+    // if(head->next == NULL)return head;
+    // while(tail->next != NULL){
+    //     j++;tail = tail->next;
+    // }
     
+    // int i=0;
+    // while(i< j){
+    //     swap(tail->data,curr->data);
+    //     tail = tail->prev;
+    //     curr = curr->next;
+    //     i++;j--;
+    // }
+    // return head;
+    
+    // 2. We change the previous and next pointers value for all node
     Node* curr = head;
-    Node* tail = head;
-    int j=1;
-    if(head->next == NULL)return head;
-    while(tail->next != NULL){
-        j++;tail = tail->next;
-    }
+    Node* forward = NULL;
+    Node* temp = NULL;
     
-    int i=0;
-    while(i< j){
-        swap(tail->data,curr->data);
-        tail = tail->prev;
-        curr = curr->next;
-        i++;j--;
+    while(curr != NULL){
+        forward = curr->next;
+        curr->next = curr->prev;
+        curr->prev = forward;
+        temp = curr;
+        curr = forward;
     }
-    return head;
-    
+    return temp;
 }
 
 
