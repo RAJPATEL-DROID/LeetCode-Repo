@@ -42,6 +42,9 @@ class Solution{
     int getMiddle(Node *head)
     {
         // Your code here
+        
+        // 1 Iteration method using 2 pointers
+        // One pointer will move at 2x speed
         Node* fast = head;
         Node* slow = head;
         
