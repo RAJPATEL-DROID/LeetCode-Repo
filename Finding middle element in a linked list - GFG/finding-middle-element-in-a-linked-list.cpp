@@ -42,34 +42,28 @@ class Solution{
     int getMiddle(Node *head)
     {
         // Your code here
-        // Node* fast = head;
-        // Node* slow = head;
+        Node* fast = head;
+        Node* slow = head;
         
-        // while(fast!= NULL && fast->next != NULL){
-        //     fast = fast->next->next;
-        //     slow = slow->next;
-        // }
-        // // if(fast == NULL){
-        // //     return slow->next->data;
-        // // }
-        // if(fast->next == NULL){
-        //     return slow->data;
-        // }
-        // return slow->next->data;
-        
-        
-        int sz =1;
-        Node* node = head;
-        while(node->next != NULL){
-            node = node->next;
-            sz++;
+        while(fast!= NULL && fast->next != NULL){
+            fast = fast->next->next;
+            slow = slow->next;
         }
-        sz = sz/2 + 1;
-        node = head;
-        for(int i=1;i<sz;i++){
-            node = node->next;
-        }
-        return node->data;
+        return slow->data;
+        
+        // With 2 iteration
+        // int sz =1;
+        // Node* node = head;
+        // while(node->next != NULL){
+        //     node = node->next;
+        //     sz++;
+        // }
+        // sz = sz/2 + 1;
+        // node = head;
+        // for(int i=1;i<sz;i++){
+        //     node = node->next;
+        // }
+        // return node->data;
     }
 };
 
