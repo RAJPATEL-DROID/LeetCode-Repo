@@ -69,14 +69,13 @@ class Solution{
         Node* slow = head;
         Node* pal = head;
         
-        while(fast->next !=NULL && fast->next->next != NULL){
+        while(fast !=NULL && fast->next != NULL){
             fast = fast->next->next;
             slow = slow->next;
            
         }
         
-        slow->next = Reverse(slow->next);
-        slow = slow->next;
+        slow = Reverse(slow);
         
         while(slow != NULL){
             if(slow->data != pal->data)return false;
