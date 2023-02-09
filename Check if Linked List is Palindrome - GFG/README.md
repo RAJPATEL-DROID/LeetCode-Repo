@@ -4,24 +4,24 @@
 
 <p><span style="font-size:18px"><strong>Example 1:</strong></span></p>
 
-<pre style="position: relative;"><span style="font-size:18px"><strong>Input:
+<pre><span style="font-size:18px"><strong>Input:
 </strong>N = 3
 value[] = {1,2,1}
 <strong>Output: </strong>1<strong>
 Explanation: </strong>The given linked list is
 1 2 1 , which is a palindrome and
 Hence, the output is 1.</span>
-<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+</pre>
 
 <p><span style="font-size:18px"><strong>Example 2:</strong></span></p>
 
-<pre style="position: relative;"><span style="font-size:18px"><strong>Input:
+<pre><span style="font-size:18px"><strong>Input:
 </strong>N = 4
 value[] = {1,2,3,4}
 <strong>Output: </strong>0<strong>
 Explanation: </strong>The given linked list
 is 1 2 3 4 , which is not a palindrome
-and Hence, the output is 0.</span><div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+and Hence, the output is 0.</span></pre>
 
 <p><span style="font-size:18px"><strong>Your Task:</strong><br>
 The task is to complete the function&nbsp;<strong>isPalindrome</strong>() which takes head as reference as the only parameter and returns true or false if linked list is palindrome&nbsp;or not respectively.</span></p>
