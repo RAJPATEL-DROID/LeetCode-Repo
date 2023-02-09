@@ -31,19 +31,57 @@ struct Node {
 
 class Solution{
   public:
+  
+    // Reverse the LinkedList
+    Node* Reverse(Node* head){
+        Node* prev = NULL;
+        Node* nxt = NULL;
+        
+        while(head != NULL){
+            nxt = head->next;
+            head->next= prev;
+            prev= head;
+            head = nxt;
+        }
+        return prev;
+    }
+    
     //Function to check whether the list is palindrome.
     bool isPalindrome(Node *head)
     {
-        string s="";
-        while(head != NULL){
-            s += head->data;
-            head = head->next;
+        // O(N) space complexity as Each Char of String will be stored somewhere
+        // string s="";
+        // while(head != NULL){
+        //     s += head->data;
+        //     head = head->next;
+        // }
+        
+        // for(int i=0;i<s.length();i++){
+        //     if(s[i] != s[s.length()-i-1]){
+        //         return false;
+        //     }
+        // }
+        // return true;
+        
+        // O(1) Time Complexity
+        if(head==NULL||head->next==NULL) return true;
+        Node* fast = head;
+        Node* slow = head;
+        Node* pal = head;
+        
+        while(fast->next !=NULL && fast->next->next != NULL){
+            fast = fast->next->next;
+            slow = slow->next;
+           
         }
         
-        for(int i=0;i<s.length();i++){
-            if(s[i] != s[s.length()-i-1]){
-                return false;
-            }
+        slow->next = Reverse(slow->next);
+        slow = slow->next;
+        
+        while(slow != NULL){
+            if(slow->data != pal->data)return false;
+            slow = slow->next;
+            pal = pal->next;
         }
         return true;
     }
