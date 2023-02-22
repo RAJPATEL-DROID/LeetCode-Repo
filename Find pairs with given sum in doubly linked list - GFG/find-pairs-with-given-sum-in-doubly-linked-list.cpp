@@ -49,6 +49,7 @@ public:
         
         while( first != last){
             
+            // if in some case the pointers cross each other on last match
             if(first->prev == last){
                 break;
             }
