@@ -10,20 +10,22 @@ using namespace std;
 class Solution{
   public:
     /*You are required to complete this method */
-    int atoi(string str) {
-        int ans = 0;
-        int flag =0;
-        if(str[0] == '-')flag=1;
-        int i=0;
-        if(flag)i=1;
-        while(i<str.length()){
-            if(str[i] < '0' || str[i] >'9' )return -1;
-            ans = ans*10 + (str[i] - '0');
-            i++;
+    int f(string &str,int sign,int i,int result){
+        if(i >= str.size()){
+            return sign*result;
         }
         
-        if(flag == 1)return -1*ans;
-        return ans;
+        if(str[i] < '0' or str[i] > '9')return -1;
+        
+        int temp = str[i] - '0';
+        return f(str,sign,i+1,result*10 + temp);
+    }
+    
+    int atoi(string str) {
+        int i =0,sign = 1;
+        if(str[0] == '-')sign=-1,++i;
+        
+        f(str,sign,i,0);
     }
 };
 
