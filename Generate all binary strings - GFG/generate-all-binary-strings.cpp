@@ -9,23 +9,40 @@ using namespace std;
 
 class Solution{
 public:
+    // Recursive Way
+    // void printF(string ans,int num){
+    //     if(num == 0){
+    //         cout<<ans<<" ";
+    //         return;
+    //     }
+    //     printF(ans+'0',num-1);
+    //     if(ans.size() == 0 || ans.back() != '1'){
+    //         printF(ans + '1',num-1);
+    //     }
+    // };
     
-    void printF(string ans,int num){
-        if(num == 0){
-            cout<<ans<<" ";
-            return;
-        }
-        printF(ans+'0',num-1);
-        if(ans.size() == 0 || ans.back() != '1'){
-            printF(ans + '1',num-1);
-        }
-    };
+    // void generateBinaryStrings(int& num){
+    //     //Write your code
+    //     string ans = "";
+    //     printF(ans, num);
+    //     return;
+    // }
     
-    void generateBinaryStrings(int& num){
+    // Iterative Method
+     void generateBinaryStrings(int& num){
         //Write your code
-        string ans = "";
-        printF(ans, num);
-        return;
+        queue<string> q;
+        q.push("0");
+        q.push("1");
+        while(!q.empty()){
+            string s = q.front();
+            if(s.length() ==num)cout<<s<<" ";
+            else{
+                q.push(s+'0');
+                if(s[s.length()-1] != '1')q.push(s+'1');
+            }
+            q.pop();
+        }
     }
 };
 
