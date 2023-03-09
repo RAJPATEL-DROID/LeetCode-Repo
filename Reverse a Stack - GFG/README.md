@@ -4,18 +4,18 @@
 
 <p><strong><span style="font-size:18px">Example 1:</span></strong></p>
 
-<pre style="position: relative;"><strong><span style="font-size:18px">Input:</span></strong>
+<pre><strong><span style="font-size:18px">Input:</span></strong>
 <span style="font-size:18px">St = {3,2,1,7,6}</span>
 <strong><span style="font-size:18px">Output:</span></strong>
-<span style="font-size:18px">{6,7,1,2,3}</span><div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+<span style="font-size:18px">{6,7,1,2,3}</span></pre>
 
 <p><strong><span style="font-size:18px">Example 2:</span></strong></p>
 
-<pre style="position: relative;"><strong><span style="font-size:18px">Input:</span></strong>
+<pre><strong><span style="font-size:18px">Input:</span></strong>
 <span style="font-size:18px">St = {4,3,9,6}</span>
 <strong><span style="font-size:18px">Output:</span></strong>
 <span style="font-size:18px">{6,9,3,4}</span>
-<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+</pre>
 
 <p><span style="font-size:18px"><strong>Your Task:</strong></span></p>
 
