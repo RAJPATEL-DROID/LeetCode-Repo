@@ -7,7 +7,7 @@ public:
         }
         backtrack(s, i + 1, res);
         if (isalpha(s[i])) {
-            // toggle case
+            // toggle case to upper
             s[i] ^= (1 << 5);
             backtrack(s, i + 1, res);
         }
