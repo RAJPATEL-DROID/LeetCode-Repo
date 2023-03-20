@@ -5,26 +5,32 @@ using namespace std;
 // } Driver Code Ends
 class Solution {
   public:
-    void func(vector<int> v,int& ans,int k,int ind){
-        if(v.size() == 1){
-            ans =  v[0];
-            return;
-        }    
+    // void func(vector<int> v,int& ans,int k,int ind){
+    //     if(v.size() == 1){
+    //         ans =  v[0];
+    //         return;
+    //     }    
         
-        ind = (ind+k)%v.size();
-        v.erase(v.begin()+ind);
-        func(v,ans,k,ind);
-    }
+    //     ind = (ind+k)%v.size();
+    //     v.erase(v.begin()+ind);
+    //     func(v,ans,k,ind);
+    // }
     int safePos(int n, int k) {
         // code here
-        vector<int> v;
-        for(int i=1;i<=n;i++){
-            v.push_back(i); 
-        }
-        int ans =-1;
-        int ind =0;
-        func(v,ans,k-1,0);
-        return ans;
+        // vector<int> v;
+        // for(int i=1;i<=n;i++){
+        //     v.push_back(i); 
+        // }
+        // int ans =-1;
+        // int ind =0;
+        // func(v,ans,k-1,0);
+        // return ans;
+        
+        if(n == 1){
+                return 1;
+            }
+            
+        return (safePos(n-1,k)+k-1)%n+1;
     }
 };
 
