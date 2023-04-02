@@ -25,9 +25,7 @@ class Solution{
 	}
 	vector<int>AllPrimeFactors(int N) {
 	    // Code here
-	    if(isprime(N)){
-	        return {N};
-	    }
+	   
 	    vector<int> ans;
 	    for(int i=2;i <= N; i++){
 	        if((N%i) == 0 && isprime(i)){
