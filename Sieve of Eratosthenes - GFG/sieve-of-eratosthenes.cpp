@@ -11,7 +11,7 @@ public:
     {
         // Write Your Code here
         vector<int> sieve(N+1,1);
-        for(int i=2;i*i<=N;i++){
+        for(int i=2;i<=N;i++){
             for(int j = i*i; j <= N; j+=i){
                 sieve[j] = 0;
             }
