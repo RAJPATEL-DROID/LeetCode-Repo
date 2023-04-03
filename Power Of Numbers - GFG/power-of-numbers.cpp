@@ -15,7 +15,6 @@ class Solution{
         if(R==0)return 1;
         long long ans = power(N,R/2)%mod;
         ans = (ans*ans)%mod;
-        //3990713
         return (R%2 == 0)?ans:(N*ans)%mod;
     }
 };
