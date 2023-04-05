@@ -35,10 +35,10 @@ class Solution{
            if(s.empty())return -1;
            int x = s.top().first;
            s.pop();
+           
            if(s.empty())minEle = -1;
            else{
-           minEle = s.top().second;
-               
+                minEle = s.top().second;
            }
            return x;
        }
