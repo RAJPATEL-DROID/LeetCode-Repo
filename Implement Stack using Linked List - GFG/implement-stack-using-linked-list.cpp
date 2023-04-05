@@ -62,7 +62,7 @@ int MyStack ::pop()
 {
     // Your Code
     if(top == NULL)return -1;
-    StackNode* temp = top;
-    top = temp->next;
-    return temp->data;
+    int temp = top->data;
+    top = top->next;
+    return temp;
 }
