@@ -9,7 +9,8 @@ public:
 //         }
 //         return answer;
 //     }
-    
+
+    // Binary search
     bool check(vector<long long> nums,int t){
         int n = nums.size();
         for(int i=n-1;i>=1;i--){
