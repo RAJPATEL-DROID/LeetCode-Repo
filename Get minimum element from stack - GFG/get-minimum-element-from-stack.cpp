@@ -33,6 +33,7 @@ class Solution{
            
            //Write your code here
            if(s.empty())return -1;
+           
            int x = s.top().first;
            s.pop();
            
@@ -40,6 +41,7 @@ class Solution{
            else{
                 minEle = s.top().second;
            }
+           
            return x;
        }
        
