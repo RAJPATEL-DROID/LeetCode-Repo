@@ -18,7 +18,7 @@ class Solution
             if(x[i] == '(' || x[i] == '['  || x[i] == '{'){
                 s.push(x[i]);
             }else{
-                if(s.empty())return false;
+                if(s.empty())return false;  // if first element is it self one of ).],}
                 if( (x[i]== ')' && s.top() == '(') || (x[i] == ']' && s.top() == '[') || (x[i] == '}' && s.top() == '{')){
                     s.pop();
                 }else{
