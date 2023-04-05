@@ -51,7 +51,7 @@ int main() {
 void MyStack ::push(int x) 
 {
     // Your Code
-    StackNode* node  = new StackNode(x);
+    StackNode* node = new StackNode(x);
     node->next = top;
     top = node;
     
@@ -62,7 +62,7 @@ int MyStack ::pop()
 {
     // Your Code
     if(top == NULL)return -1;
-    StackNode* p = top;
-    top = top->next;
-    return p->data;
+    StackNode* temp = top;
+    top = temp->next;
+    return temp->data;
 }
