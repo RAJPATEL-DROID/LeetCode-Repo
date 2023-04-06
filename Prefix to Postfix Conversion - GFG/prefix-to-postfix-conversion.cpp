@@ -9,7 +9,7 @@ using namespace std;
 
 class Solution {
   public:
-    bool isOperator(char c){
+  bool isOperator(char c){
             switch(c){
                 case '+':
                 case '/':
@@ -20,23 +20,71 @@ class Solution {
                     return true;
             }
             return false;
-    }
-    
-    string preToPost(string s) {
-         stack<string> st;
+        }
+    string pretoIn(string s){
+        
+        stack<string> st;
         for(int i = s.size()-1; i >= 0;i--){
             if(isOperator(s[i])){
                 string s1 = st.top(); st.pop();
                 string s2 = st.top(); st.pop();
                 
-                string temp = s1 + s2 + s[i];
+                string temp = '(' + s1 + s[i] + s2 + ')';
                 st.push(temp);
             }else{
-                string temp(1,s[i]);
+                string temp = "";
+                temp += s[i];
                 st.push(temp);
             }
         }
         return st.top();
+    };
+    
+    bool isChar(char c){
+        if(c != '+' && c != '-' && c != '*' && c!= '/' && c != '^' && c != '%' && c!= '(' && c != ')')return true;
+        return false;
+    }
+    
+    int precedence(char c){
+        if(c == '^')return 3;
+        else if(c == '*' || c == '/')return 2;
+        else if(c == '+' || c == '-')return 1;
+        else return -1;
+    }
+    string inToPost(string s){
+        stack<char> st;
+        string ans = "";
+        for(int i=0;i < s.size(); i++ ){
+            if(isChar(s[i])){
+                ans +=s[i]; 
+            }else if(s[i] == '('){
+                st.push(s[i]);
+            }else if(s[i] == ')'){
+                while( st.top() != '('){
+                    ans += st.top();
+                    st.pop();
+                }
+                st.pop();
+            }else{
+                while(!st.empty() && precedence(s[i]) <= precedence(st.top())){
+                    ans += st.top();
+                    st.pop();
+                }
+                st.push(s[i]);
+            }
+        }
+        
+        while(!st.empty()){
+            ans += st.top();
+            st.pop();
+        }
+        return ans;
+    }
+    
+    string preToPost(string pre_exp) {
+        
+        string ans = pretoIn(pre_exp);
+        return inToPost(ans);
     }
 };
 
