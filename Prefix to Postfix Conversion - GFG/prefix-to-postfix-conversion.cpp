@@ -32,8 +32,7 @@ class Solution {
 //                 string temp = '(' + s1 + s[i] + s2 + ')';
 //                 st.push(temp);
 //             }else{
-//                 string temp = "";
-//                 temp += s[i];
+//                 string temp(1,s[i]);
 //                 st.push(temp);
 //             }
 //         }
