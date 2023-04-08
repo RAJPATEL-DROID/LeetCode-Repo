@@ -11,65 +11,22 @@ class Solution{
     public:
     long long trappingWater(int arr[], int n){
         // code here
-        vector<int> gr(n,0);
-        stack<int> s;  
         
-        // Greater element in right
-        for(int i=n-1;i >= 0; i--){
-            if(!s.empty() && s.top() > arr[i]){
-                if(i != n-1 && s.top() < gr[i+1]){
-                    gr[i] = gr[i+1];
-                }else{
-                    gr[i] = s.top();
-                }
-            }else{
-                while(!s.empty() && s.top() <= arr[i]){
-                    s.pop();
-                }
-                if(!s.empty()){
-                    if(i != n-1 && s.top() < gr[i+1]){
-                        gr[i] = gr[i+1];
-                    }else{
-                        gr[i] = s.top();
-                    }
-                }
-            }
-            s.push(arr[i]);
-        }
-       while(!s.empty()){
-           s.pop();
-       }
-        // greater element in left
-        vector<int> gl(n,0); 
-        for(int i=0; i < n; i++){
-            if(!s.empty() && s.top() > arr[i]){
-                if(i != 0 && s.top() < gl[i-1]){
-                    gl[i] = gl[i-1];
-                }else{
-                    gl[i] = s.top();
-                }
-            }else{
-                while(!s.empty() && s.top() <= arr[i]){
-                    s.pop();
-                }
-                if(!s.empty()){
-                    if(i != 0 && s.top() < gl[i-1]){
-                        gl[i] = gl[i-1];
-                    }else{
-                        gl[i] = s.top();
-                    }
-                }
-            }
-            s.push(arr[i]);
-        }
+        long long total_water = 0;
+        int lmax[n];
+        int rmax[n];
         
-        long long res =0;
-        for(int i=0;i <n;i++){
-            // cout<<i<<" "<<gr[i]<<" "<<gl[i]<<"\n";
-            int qnt = min(gr[i],gl[i]);
-            res += (qnt==0)?0:qnt - arr[i];
-        }
-        return res;
+        lmax[0] = arr[0];
+        for(int i=1; i<n-1; i++)
+            lmax[i] = max(lmax[i-1],arr[i]);
+            
+        rmax[n-1] = arr[n-1];
+        for(int i=n-2; i>=0; i--)
+            rmax[i] = max(rmax[i+1],arr[i]);
+            
+        for(int i=1; i<n-1; i++)
+        total_water = total_water + (min(lmax[i],rmax[i])-arr[i]);
+        return total_water;
     }
 };
 
