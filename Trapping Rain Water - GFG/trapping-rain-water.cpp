@@ -40,7 +40,7 @@ class Solution{
            s.pop();
        }
         // greater element in left
-        vector<int> gl(n,0);
+        vector<int> gl(n,0); 
         for(int i=0; i < n; i++){
             if(!s.empty() && s.top() > arr[i]){
                 if(i != 0 && s.top() < gl[i-1]){
@@ -53,7 +53,7 @@ class Solution{
                     s.pop();
                 }
                 if(!s.empty()){
-                    if(i != n-1 && s.top() < gl[i-1]){
+                    if(i != 0 && s.top() < gl[i-1]){
                         gl[i] = gl[i-1];
                     }else{
                         gl[i] = s.top();
@@ -62,6 +62,7 @@ class Solution{
             }
             s.push(arr[i]);
         }
+        
         long long res =0;
         for(int i=0;i <n;i++){
             // cout<<i<<" "<<gr[i]<<" "<<gl[i]<<"\n";
