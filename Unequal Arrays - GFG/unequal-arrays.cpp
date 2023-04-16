@@ -52,7 +52,11 @@ class Solution {
             
         }
         
-        
+        // If both array don't have same size then it's not possible to 
+        // make A same like B as our operation only shift the values from one to other elements
+        // Also if no of Odd/Even element in each array are not same then also 
+        // We can't do the asked. As we can add/subtract 2 from even and it result into even
+        // and similarly for odd. 
         if(sum1 != sum2 || (AevenOdd[0].size() != BEvenOdd[0].size())){
             return -1;
         }
@@ -60,13 +64,21 @@ class Solution {
         long long ans=0;
         
         for(int i=0;i <2;i++){
+            
+            // Sorting is necessary so we get minimum number of operations
             sort(AevenOdd[i].begin(),AevenOdd[i].end());
             sort(BEvenOdd[i].begin(),BEvenOdd[i].end());
             
+            
             for(int j= 0; j < AevenOdd[i].size(); j++){
+                // To make two elements equal we need to cover up the difference between two,
+                //as we will add/subtract 2 from difference,so operations required to 
+                // coverup the difference will be difference/2
                 ans += abs(AevenOdd[i][j] - BEvenOdd[i][j])/2;
             }
         }
+        // As we will be performing the Addition in one Element and Subtraction in Other Element,
+        // We will totally perform the half of the operations only.
         return ans/2;
     }
 };
