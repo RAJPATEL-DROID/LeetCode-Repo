@@ -11,13 +11,13 @@ class Solution{
     public:
     long long trappingWater(int arr[], int n){
         // code here
-        
+        // DP
         long long total_water = 0;
         int lmax[n];
         int rmax[n];
         
         lmax[0] = arr[0];
-        for(int i=1; i<n-1; i++)
+        for(int i=1; i<= n-1; i++)
             lmax[i] = max(lmax[i-1],arr[i]);
             
         rmax[n-1] = arr[n-1];
