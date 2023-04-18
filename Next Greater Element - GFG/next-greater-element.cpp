@@ -10,26 +10,35 @@ class Solution
     //Function to find the next greater element for each element of the array.
     vector<long long> nextLargerElement(vector<long long> a, int n){
         // Your code here
-        vector<long long> ans;
+        vector<long long> ans(n,-1);
         stack<long long> s;
-        for(int i =n-1;i >=0 ;i--){
-            if(s.empty()){
-                ans.push_back(-1);
-            }else if(!s.empty() && s.top() > a[i] ){
-                ans.push_back(s.top());
-            }else{
-                while(!s.empty() && a[i] >= s.top()){
+        // for(int i =n-1;i >=0 ;i--){
+        //     if(s.empty()){
+        //         ans.push_back(-1);
+        //     }else if(!s.empty() && s.top() > a[i] ){
+        //         ans.push_back(s.top());
+        //     }else{
+        //         while(!s.empty() && a[i] >= s.top()){
+        //             s.pop();
+        //         }
+        //         if(s.empty()){
+        //             ans.push_back(-1);
+        //         }else{
+        //             ans.push_back(s.top());
+        //         }
+        //     }     
+        //     s.push(a[i]);
+        // }
+        // reverse(ans.begin(),ans.end());
+        
+        for(int i=0;i <= n-1;i++){
+                while(!s.empty() && a[s.top()] < a[i]){
+                    ans[s.top()] = a[i];
                     s.pop();
                 }
-                if(s.empty()){
-                    ans.push_back(-1);
-                }else{
-                    ans.push_back(s.top());
-                }
-            }     
-            s.push(a[i]);
+                s.push(i);
         }
-        reverse(ans.begin(),ans.end());
+        
         return ans;
     }
 };
