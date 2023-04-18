@@ -24,7 +24,7 @@ class Solution{
         for(int i=n-2; i>=0; i--)
             rmax[i] = max(rmax[i+1],arr[i]);
             
-        for(int i=1; i<n-1; i++)
+        for(int i=1; i<=n-1; i++)
         total_water = total_water + (min(lmax[i],rmax[i])-arr[i]);
         return total_water;
     }
