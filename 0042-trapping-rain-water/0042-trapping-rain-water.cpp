@@ -44,6 +44,8 @@ public:
 //         }
     
 //         return ans;
+        
+        // Simple O(n) ith two loops iterating
         int n = arr.size();
         long long total_water = 0;
         int lmax[n];
