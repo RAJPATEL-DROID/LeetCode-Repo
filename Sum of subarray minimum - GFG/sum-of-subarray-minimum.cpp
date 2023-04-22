@@ -22,7 +22,7 @@ class Solution {
                 // leftBoundary is index of prev smaller ele
                 int leftBoundary = s.empty()? -1 : s.top();
                 
-                // for curr_element, element at i is the next smaller element,as arr[i] <
+                // for curr_element, element at i is the next smaller element,as arr[i] < curr_element
                 int rightBoundary = i;
                 
                 int totalSubarray = (rightBoundary - curr_ele)*(curr_ele - leftBoundary) % mod;
