@@ -9,32 +9,43 @@ class Solution {
     long long subarrayRanges(int n, vector<int> &nums) {
         // code here
        
-        long long answer = 0;
-        stack<int> stk;
+        long long ans =0,mid,left,boundary;
+        stack<int> s;
         
-        // Find the sum of all the minimum.
-        for (int right = 0; right <= n; ++right) {
-            while (!stk.empty() && (right == n || nums[stk.top()] >= nums[right])) {
-                int mid = stk.top();
-                stk.pop();
-                int left = stk.empty() ? -1 : stk.top();
-                answer -= (long long)nums[mid] * (right - mid) * (mid - left);
+        for(int right =0; right <= n; right++){
+            
+            while( !s.empty() && nums[s.top()] > (right == n ? -2e9 : nums[right]) ){
+                mid = s.top(); s.pop();
+                
+                left =s.empty() ? -1 : s.top();
+                
+                boundary = (mid - left)* (right - mid);
+                
+                ans -= (boundary) * nums[mid];
             }
-            stk.push(right); 
+            s.push(right);
         }
         
-        // Find the sum of all the maximum.
-        stk.pop();
-        for (int right = 0; right <= n; ++right) {
-            while (!stk.empty() && (right == n || nums[stk.top()] <= nums[right])) {
-                int mid = stk.top();
-                stk.pop();
-                int left = stk.empty() ? -1 : stk.top();
-                answer += (long long)nums[mid] * (right - mid) * (mid - left);
+        s = stack<int>();
+        
+        // Now Find No. of times element occurs as Maximum in subarrays'
+        for(int right=0 ; right <= n; right++){
+            
+            while(!s.empty() && nums[s.top()] < (right==n?2e9 : nums[right]) ){
+                
+                mid = s.top(); s.pop();
+                
+                left = s.empty()? -1 : s.top();
+                
+                boundary = (mid - left) * (right - mid);
+                
+                ans += (boundary) * nums[mid];
             }
-            stk.push(right); 
+            s.push(right);
         }
-        return answer;
+        
+        
+        return ans;
     }
 };
 
