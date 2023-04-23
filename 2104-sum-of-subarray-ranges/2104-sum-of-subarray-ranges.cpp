@@ -1,32 +1,25 @@
 class Solution {
 public:
-    long long subArrayRanges(vector<int>& nums) {
-        int n = nums.size();
-        long long answer = 0;
-        stack<int> stk;
-        
-        // Find the sum of all the minimum.
-        for (int right = 0; right <= n; ++right) {
-            while (!stk.empty() && (right == n || nums[stk.top()] >= nums[right])) {
-                int mid = stk.top();
-                stk.pop();
-                int left = stk.empty() ? -1 : stk.top();
-                answer -= (long long)nums[mid] * (right - mid) * (mid - left);
+    long long subArrayRanges(vector<int>& A) {
+        long res = 0, n = A.size(), j, k;
+        stack<int> s;
+        for (int i = 0; i <= n; ++i) {
+            while (!s.empty() && A[s.top()] > (i == n ? -2e9 : A[i])) {
+                j = s.top(), s.pop();
+                k = s.empty() ? -1 : s.top();
+                res -= (long)A[j] * (i - j) * (j - k);
             }
-            stk.push(right); 
+            s.push(i);
         }
-        
-        // Find the sum of all the maximum.
-        stk.pop();
-        for (int right = 0; right <= n; ++right) {
-            while (!stk.empty() && (right == n || nums[stk.top()] <= nums[right])) {
-                int mid = stk.top();
-                stk.pop();
-                int left = stk.empty() ? -1 : stk.top();
-                answer += (long long)nums[mid] * (right - mid) * (mid - left);
+        s = stack<int>();
+        for (int i = 0; i <= n; ++i) {
+            while (!s.empty() && A[s.top()] < (i == n ? 2e9 : A[i])) {
+                j = s.top(), s.pop();
+                k = s.empty() ? -1 : s.top();
+                res += (long)A[j] * (i - j) * (j - k);
             }
-            stk.push(right); 
+            s.push(i);
         }
-        return answer;
+        return res;
     }
 };
