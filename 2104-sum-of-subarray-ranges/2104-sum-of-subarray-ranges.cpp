@@ -3,7 +3,7 @@ public:
     long long subArrayRanges(vector<int>& A) {
         long res = 0, n = A.size(), j, k;
         stack<int> s;\
-            // Find the Subarrays of Minimums -> See the Question with samename
+            // Find the Sum of Subarrays of Minimums -> See the Question with samename
         for (int i = 0; i <= n; ++i) {
             while (!s.empty() && A[s.top()] > (i == n ? -2e9 : A[i])) {
                 j = s.top(), s.pop();
@@ -15,7 +15,7 @@ public:
         
         s = stack<int>();
         
-        // Find the Subarray of Maximums
+        // Find the Sum of  Subarray of Maximums
         for (int i = 0; i <= n; ++i) {
             while (!s.empty() && A[s.top()] < (i == n ? 2e9 : A[i])) {
                 j = s.top(), s.pop();
