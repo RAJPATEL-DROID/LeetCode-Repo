@@ -45,7 +45,7 @@ public:
                 s.pop();
                 int width;
                 if(s.empty())width = i;
-                else width = i- s.top()-1;
+                else width = (i-1) - s.top();
                 ans = max(ans,height * width);
             }
             s.push(i);
