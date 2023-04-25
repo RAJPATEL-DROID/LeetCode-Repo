@@ -11,6 +11,8 @@ class Solution
     long long getMaxArea(long long h[], int n)
     {
         // Your code here
+        
+        // 2 PASS 
     //     vector<int> smlLeft(n),smlRight(n);
     //     stack<int> s;
         
@@ -41,6 +43,22 @@ class Solution
     //     }
     //     return ans;
         
+        long long ans =0;
+        stack<int> s;
+        
+        for(int i =0 ; i <= n; i++){
+            while(!s.empty() && (i == n || h[s.top()] >= h[i])){
+                long long height = h[s.top()];
+                s.pop();
+                long long width;
+                if(s.empty())width = i;
+                else width = i- s.top()-1;
+                ans = max(ans,height * width);
+            }
+            s.push(i);
+        }
+        
+        return ans;
     }
 };
 
