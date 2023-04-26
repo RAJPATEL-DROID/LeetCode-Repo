@@ -15,33 +15,55 @@ class Solution
     vector <int> max_of_subarrays(int *a, int n, int k)
     {
         // your code here
-        deque<int> dq;
-        vector<int> ans;
+        // deque<int> dq;
+        // vector<int> ans;
         
         
-        // First We insert 3 element in the queue and also keep max_ele;
-        for(int i=0 ; i <k ; i++){
-          while(!dq.empty() && dq.back() < a[i]){
-              dq.pop_back();
-          }
+        // // First We insert 3 element in the queue and also keep max_ele;
+        // for(int i=0 ; i <k ; i++){
+        //   while(!dq.empty() && dq.back() < a[i]){
+        //       dq.pop_back();
+        //   }
           
-          dq.push_back(a[i]);
+        //   dq.push_back(a[i]);
+        // }
+        
+        // ans.push_back(dq.front());
+        
+        
+        // // Now traverse rest of the Array from k to n and push the ele in the back and take care of the max_ele
+        // for(int i= k ; i < n ;i++){
+        //     if(dq.front() == a[i-k])dq.pop_front();
+            
+        //     while(!dq.empty() && dq.back() < a[i]){ dq.pop_back(); }
+            
+        //     dq.push_back(a[i]);
+        //     ans.push_back(dq.front());
+        // }
+        
+        // return ans;
+        
+        
+        vector<int>ans;
+        
+        priority_queue<pair<int,int> >pq;
+        
+        for(int i=0;i<k;i++){
+            pq.push({a[i],i});
         }
         
-        ans.push_back(dq.front());
+        ans.push_back(pq.top().first);
         
+        for(int i=k;i<n;i++){
         
-        // Now traverse rest of the Array from k to n and push the ele in the back and take care of the max_ele
-        for(int i= k ; i < n ;i++){
-            if(dq.front() == a[i-k])dq.pop_front();
-            
-            while(!dq.empty() && dq.back() < a[i]){ dq.pop_back(); }
-            
-            dq.push_back(a[i]);
-            ans.push_back(dq.front());
+           pq.push({a[i],i});
+        
+           while(i-pq.top().second>=k)pq.pop();
+        
+           ans.push_back(pq.top().first);
         }
-        
         return ans;
+
     }
 };
 
