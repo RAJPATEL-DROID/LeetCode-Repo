@@ -11,15 +11,15 @@ class Solution
 {
     public:
     //Function to find if there is a celebrity in the party or not.
-    int celebrity(vector<vector<int> >& M, int n) 
+    int celebrity(vector<vector<int> >& m, int n) 
     {
         // code here 
-        int j = 0;
+        /*int j = 0;
         int cnt =0,celeb=-1;
         for(int i =0 ;i<n;i++){
             int flag =1;
             for(j=0; j < n; j++){
-                if(i == j || (M[i][j] == 0 && M[j][i] == 1))continue;
+                if(i == j || (m[i][j] == 0 && m[j][i] == 1))continue;
                 else {
                     flag =0;
                     break;
@@ -30,9 +30,37 @@ class Solution
                 celeb = i;
                 cnt++;
             }
-        }
+            return cnt>1?-1:celeb;
+        }*/
         
-        return cnt>1?-1:celeb;
+        // Stack approach
+        // stack<int> s;
+        // for(int i=0; i< n; i++){
+        //     s.push(i);
+        // }
+        
+        // while(s.size() > 1){
+        //     int i = s.top();s.pop();
+        //     int j = s.top();s.pop();
+            
+        //     if(m[i][j] == 1){
+        //         s.push(j);
+        //     }
+        //     else s.push(i);
+        // }
+        
+        // int celeb = s.top();s.pop();
+        
+        // for(int i=0; i < n; i++){
+        //     if(i != celeb){
+        //         if(m[i][celeb] == 0 || m[celeb][i] == 1){
+        //             return -1;
+        //         }
+        //     } 
+        // }
+        // return celeb;
+        // Two Pointer Approach
+        
     }
 };
 
