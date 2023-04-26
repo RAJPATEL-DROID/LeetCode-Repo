@@ -59,8 +59,24 @@ class Solution
         //     } 
         // }
         // return celeb;
-        // Two Pointer Approach
         
+        // Two Pointer Approach
+        // Here we are considering the 2D array into 1D 
+        int start =0,end =n-1;
+        
+        
+        while(start<end){
+            if(m[start][end] == 1)start++;
+            else end--;
+        }
+        
+        for(int i=0; i < n; i++){
+            if(i != start)
+            {
+                if(m[i][start] == 0 || m[start][i] == 1)return -1;
+            }
+        }
+        return start;
     }
 };
 
