@@ -8,25 +8,25 @@ A square NxN matrix M[][] is used to represent people at the party such that if 
 
 <p><strong><span style="font-size:18px">Example 1:</span></strong></p>
 
-<pre><span style="font-size:18px"><strong>Input:</strong>
+<pre style="position: relative;"><span style="font-size:18px"><strong>Input:</strong>
 N = 3
 M[][] = {{0 1 0},
          {0 0 0}, 
          {0 1 0}}
 <strong>Output:</strong> 1
 <strong>Explanation: </strong>0th and 2nd person both
-know 1. Therefore, 1 is the celebrity. </span></pre>
+know 1. Therefore, 1 is the celebrity. </span><div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
 
 <p><br>
 <span style="font-size:18px"><strong>Example 2:</strong></span></p>
 
-<pre><span style="font-size:18px"><strong>Input:</strong>
+<pre style="position: relative;"><span style="font-size:18px"><strong>Input:</strong>
 N = 2
 M[][] = {{0 1},
          {1 0}}
 <strong>Output:</strong> -1
 <strong>Explanation: </strong>The two people at the party both
-know each other. None of them is a celebrity.</span></pre>
+know each other. None of them is a celebrity.</span><div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
 
 <p><br>
 <span style="font-size:18px"><strong>Your Task:</strong><br>
