@@ -39,6 +39,7 @@ class Solution
         //     s.push(i);
         // }
         
+        // Find the Viable Celebritry position
         // while(s.size() > 1){
         //     int i = s.top();s.pop();
         //     int j = s.top();s.pop();
@@ -51,6 +52,7 @@ class Solution
         
         // int celeb = s.top();s.pop();
         
+        // Check if the postion we got have celebrity  or not
         // for(int i=0; i < n; i++){
         //     if(i != celeb){
         //         if(m[i][celeb] == 0 || m[celeb][i] == 1){
