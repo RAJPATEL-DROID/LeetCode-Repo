@@ -8,15 +8,16 @@ class Solution {
     int characterReplacement(string s, int k) {
         // code here
         int i =0,j=0,ans=0;
-        unordered_map<char,int> m;
+        // unordered_map<char,int> m;
+        int hashmap[26]={0};
         int cnt=0;
         for(;j < s.length(); j++){
-            m[s[j]]++;
+            hashmap[s[j]-'A']++;
             
-            cnt = max(cnt,m[s[j]]);
+            cnt = max(cnt,hashmap[s[j]-'A']);
             
             while( (j- i+1) - cnt > k){
-                m[s[i]]--;
+                hashmap[s[i]-'A']--;
                 i++;
             }
             
