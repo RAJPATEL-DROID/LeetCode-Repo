@@ -21,8 +21,8 @@ class Solution {
                ans++;
            }else if(arr[i] ==0 && arr[i-1]==0)continue;
         }
-        if(cnt == n)return 0;
-        else if(ans ==0)return -1;
+        if(cnt == n)return 0; // all ele are zero
+        else if(ans ==0)return -1; // if no zero found;
         return ans;
     }
 };
