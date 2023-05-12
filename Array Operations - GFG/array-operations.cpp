@@ -9,10 +9,10 @@ class Solution {
     int arrayOperations(int n, vector<int> &arr) {
         // code here
         int ans = 0;
-        int cnt =0;
+        int cnt =0; // to check if all ele are zero or not
         for(int i=0;i <= n;i++){
-            if(arr[i] == 0 && i != n)cnt++;
-            if( i== n && ans != 0 && arr[n-1] != 0){
+            if(arr[i] == 0 && i != n)cnt++; 
+            if( i== n && ans != 0 && arr[n-1] != 0){ // so if last
                 ans++;
                 continue;
             }
@@ -22,7 +22,6 @@ class Solution {
            }else if(arr[i] ==0 && arr[i-1]==0)continue;
         }
         if(cnt == n)return 0;
-        if(arr[0] == 0 && ans ==0 )return 1;
         else if(ans ==0)return -1;
         return ans;
     }
