@@ -6,22 +6,34 @@ using namespace std;
 // } Driver Code Ends
 class Solution {
   public:
-    int atmost(vector<int> &arr, int N, int k){
-      vector<int> m(N+1,0);
-        int cnt = 0, i = 0, j = 0, ans = 0;
-        while (j < N) {
-            if(m[arr[j]] == 0)cnt++;
-            m[arr[j]]++;
+    int atmost(vector<int> &A, int N, int K){
+    //   vector<int> m(N+1,0);
+    //     int cnt = 0, i = 0, j = 0, ans = 0;
+    //     while (j < N) {
+    //         if(m[arr[j]] == 0)cnt++;
+    //         m[arr[j]]++;
             
-            while(cnt > k){
-                m[arr[i]]--;
-                if(m[arr[i]]== 0)cnt--;
+    //         while(cnt > k){
+    //             m[arr[i]]--;
+    //             if(m[arr[i]]== 0)cnt--;
+    //             i++;
+    //         }
+    //         ans += j-i+1;
+    //         j++;
+    //     }
+    //     return ans;
+    int i = 0, res = 0;
+        unordered_map<int, int> count;
+        for (int j = 0; j < A.size(); ++j) {
+            if (!count[A[j]]++) K--;
+            while (K < 0) {
+                if (!--count[A[i]]) K++;
                 i++;
             }
-            ans += j-i+1;
-            j++;
+            res += j - i + 1;
         }
-        return ans;
+        return res;
+    
     };
     int subarrayCount(vector<int> &arr, int N, int k) {
         // code here
