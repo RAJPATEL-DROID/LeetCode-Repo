@@ -9,7 +9,7 @@ class Solution {
     string longestPalin (string s) {
         // code here 
         int n = s.length();
-        string res= "";
+        // string res= "";
         int maxLen =1,start =0;
         for(int i =0;i<n; i++){
            int l = i-1,r = i+1;
@@ -28,11 +28,7 @@ class Solution {
                start = l+1;
            }
         }
-        
-        for(int i =start; i <= start+maxLen-1;i++){
-            res+= s[i];
-        }
-        return res;
+        return s.substr(start,maxLen);
     }
 };
 
