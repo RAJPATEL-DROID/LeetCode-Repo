@@ -137,12 +137,29 @@ struct Node
     
 // }
 
+vector<int> preIterative(Node* root){
+    vector<int> ans;
+    stack<Node*> st;
+    st.push(root);
+    
+    while(!st.empty()){
+        Node* node = st.top();
+        st.pop();
+        
+        if(node->right != NULL)st.push(node->right);
+        if(node->left != NULL)st.push(node->left);
+        ans.push_back(node->data);
+    }
+    return ans;
+    
+    
+}
 
 //Function to return a list containing the preorder traversal of the tree.
-vector <int> preorder(Node* root)
-{
-  // Your code here
-  vector<int> ans;
-  preRecursive(root,ans);
-  return ans;
+vector <int> preorder(Node* root){
+    // Your code here
+    vector<int> ans;
+    //   preRecursive(root,ans);
+    ans = preIterative(root);
+    return ans;
 }
