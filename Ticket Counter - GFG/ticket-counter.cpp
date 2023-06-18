@@ -7,15 +7,29 @@ using namespace std;
 
 class Solution {
   public:
-    int distributeTicket(int N, int K) {
+    int distributeTicket(int n, int k) {
         // code here
-        int m = N/K;
-        int r = N%K;
+        // int m = N/K;
+        // int r = N%K;
         
-        if(m%2 == 0 && !r )return K*(m/2) +1;
-        if(m%2 == 0 && r )return K*(m/2)+ r;
-        if(m%2 != 0 && !r )return K*(m/2 + 1 );
-        if(m%2 != 0 && r )return K*(m/2 + 1)+ 1;
+        // if(m%2 == 0 && !r )return K*(m/2) +1;
+        // if(m%2 == 0 && r )return K*(m/2)+ r;
+        // if(m%2 != 0 && !r )return K*(m/2 + 1 );
+        // if(m%2 != 0 && r )return K*(m/2 + 1)+ 1;
+        
+         int l=1,r=n,f=1;
+        while(l<=r){
+            if(f){
+                if(l+k<r)l+=k;
+                else return r;
+            }
+            else{
+                if(r-k>l)r-=k;
+                else return l;
+            }
+            f=!f;
+        }
+        return 0;
     }
 };
 
