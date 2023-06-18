@@ -129,23 +129,53 @@ vector <int> postOrder(Node* root)
   // Your code here
   
   // Using 2 Stack
-  vector<int> ans;
-  stack<Node*> s1,s2;
+//   vector<int> ans;
+//   stack<Node*> s1,s2;
   
-  s1.push(root);
+//   s1.push(root);
   
-  while(!s1.empty()){
-      Node* node = s1.top();
-      s1.pop();
-      s2.push(node);
-      if(node->left!= NULL)s1.push(node->left);
-      if(node->right != NULL)s1.push(node->right);
-  }
+//   while(!s1.empty()){
+//       Node* node = s1.top();
+//       s1.pop();
+//       s2.push(node);
+//       if(node->left!= NULL)s1.push(node->left);
+//       if(node->right != NULL)s1.push(node->right);
+//   }
   
-  while(!s2.empty()){
-      ans.push_back(s2.top()->data);
-      s2.pop();
-  }
-  return ans;
+//   while(!s2.empty()){
+//       ans.push_back(s2.top()->data);
+//       s2.pop();
+//   }
+//   return ans;
+
+    // using 1 Stack
+    
+    vector<int> ans;
+    
+    stack<Node* > s;
+    Node* curr = root;
+    Node* temp = NULL;
+    while(curr!= NULL || !s.empty()){
+        if(curr != NULL){
+            s.push(curr);
+            curr = curr->left;
+        }else{
+            temp = s.top()->right;
+            if(temp == NULL){
+                temp = s.top();
+                s.pop();
+                ans.push_back(temp->data);
+                
+                while(!s.empty() && temp == s.top()->right){
+                    temp = s.top();s.pop();
+                    ans.push_back(temp->data);
+                }
+            }else{
+                curr = temp;
+            }
+        }
+    }
+    return ans;
+
   
 }
