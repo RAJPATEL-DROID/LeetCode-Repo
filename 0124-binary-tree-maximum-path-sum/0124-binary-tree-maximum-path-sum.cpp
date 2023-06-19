@@ -11,17 +11,14 @@
  */
 class Solution {
     private:
-    int findPathSum(TreeNode* root,int& maxi){
+    int findPathSum(TreeNode* root,int& ans){
         if(root == nullptr)return 0;
         
-        int l = findPathSum(root->left,maxi);
-        int r= findPathSum(root->right,maxi);
-        if(l < 0) l=0;
-        if(r < 0) r=0;
-        
-        maxi  = max(maxi, root->val + l + r);
-        
-        return root->val + max(l,r);
+        int left = findPathSum(root->left,ans);
+        int right= findPathSum(root->right,ans);
+
+        ans = max(ans, root->val + left + right);
+        return max(0, root->val + max(left, right));
     }
 public:
     int maxPathSum(TreeNode* root) {
