@@ -101,11 +101,27 @@ class Solution{
     //Function to find the height of a binary tree.
     int height(struct Node* node){
         // code here 
-        if(node == NULL)return NULL;
-        int l = height(node->left);
-        int r = height(node->right);
+        // if(node == NULL)return 0;
+        // int l = height(node->left);
+        // int r = height(node->right);
         
-        return 1+ max(l,r);
+        // return 1+ max(l,r);
+        queue<struct Node*> q;
+        q.push(node);
+        int depth=0;
+        while(!q.empty()){
+            depth++;
+            int sz = q.size();
+            for(int i=0;i < sz;i++){
+                struct Node* temp = q.front();
+                q.pop();
+                
+                if(temp->left != NULL)q.push(temp->left);
+                if(temp->right != NULL)q.push(temp->right);
+            }
+            
+        }
+        return depth;
     }
 };
 
