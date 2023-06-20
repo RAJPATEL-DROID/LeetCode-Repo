@@ -1,22 +1,24 @@
 class Solution {
 public:
     vector<int> getAverages(vector<int>& nums, int k) {
-        if(k==0)return nums;
-        vector<int> ans(nums.size(),-1);
-        if(2*k + 1> nums.size())return ans;
         
-        vector<long long> prefSum(nums.size()+1);
+        if(k ==0 )return nums;
         
-        for(int i=0;i< nums.size();i++){
-            prefSum[i+1] = nums[i] + prefSum[i];
+        int n = nums.size();
+        vector<int> avg(n,-1);
+        
+        if(2*k + 1 > n)return avg;
+        
+        long long windowSum =0;
+        for(int i= 0;i < (2*k + 1); i++){
+            windowSum += nums[i];
         }
+        avg[k] = windowSum/(2*k + 1);
         
-        
-        for(int i=k;i < nums.size()-k; i++){
-                long long sum =  (prefSum[i+k+1] - prefSum[i-k]);
-                int avg = sum/(2*k  + 1);    
-                ans[i] = avg;
-            }
-        return ans;
+        for(int i= 2*k +1 ;i < n; i++){
+            windowSum = windowSum - nums[i - (2*k+1)] + nums[i];
+            avg[i-k] = windowSum/(2*k + 1);
+        }
+        return avg;
     }
 };
