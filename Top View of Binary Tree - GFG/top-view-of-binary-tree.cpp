@@ -105,31 +105,57 @@ class Solution
     vector<int> topView(Node *root)
     {
         //Your code here
+        
+        // BFS 
+        // vector<int> ans;
+        // if(root == nullptr)return ans;
+        // queue<pair<Node*,int>> q;
+        // map<int,int> m;
+        // q.push({root,0});
+        
+        // while(!q.empty()){
+        //     int sz = q.size();
+            
+        //     for(int i=0;i < sz; i++){
+        //         Node* node = q.front().first;
+        //         int level = q.front().second;
+        //         q.pop();
+        //         if(m.find(level) == m.end())m[level] = node->data;
+                
+        //         if(node->left)q.push({node->left,level-1});
+        //         if(node->right)q.push({node->right,level+1});
+        //     }
+        // }
+        
+        // for(auto it:m){
+        //     ans.push_back(it.second);
+        // }
+        // return ans;
+        
+        // DFS 
         vector<int> ans;
         if(root == nullptr)return ans;
-        queue<pair<Node*,int>> q;
-        map<int,int> m;
-        q.push({root,0});
+        map<int ,pair<int,int> > mp;
+        dfs(root,mp,0, 0);
         
-        while(!q.empty()){
-            int sz = q.size();
-            
-            for(int i=0;i < sz; i++){
-                Node* node = q.front().first;
-                int level = q.front().second;
-                q.pop();
-                if(m.find(level) == m.end())m[level] = node->data;
-                
-                if(node->left)q.push({node->left,level-1});
-                if(node->right)q.push({node->right,level+1});
-            }
-        }
-        
-        for(auto it:m){
-            ans.push_back(it.second);
+        for(auto it : mp){
+            ans.push_back(it.second.second);
         }
         return ans;
     }
+    
+    void dfs(Node* root,map<int, pair<int,int> >& mp, int col, int height ){
+        if(root  == nullptr)return;
+        
+        if(mp.find(col) == mp.end())mp[col] = {height,root->data};
+        if(mp[col].first > height){
+            mp[col] = {height,root->data};
+        }
+        
+        dfs(root->left,mp,col -1,height+ 1);
+        dfs(root->right,mp,col +1,height+ 1);
+    }
+    
 
 };
 
