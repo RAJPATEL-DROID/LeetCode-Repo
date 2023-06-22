@@ -96,52 +96,54 @@ Node* buildTree(string str)
 class Solution {
 private:
     
-    // void dfs(Node* root,map<int,pair<int,int>>& m,int col,int height){
-    //     if(root == nullptr)return;
+    void dfs(Node* root,map<int,pair<int,int>>& m,int col,int height){
+        if(root == nullptr)return;
         
-    //     if(m.find(col) == m.end())m[col] = {height,root->data};
-    //     if(m[col].first){
-    //         if(m[col].first <= height){
-    //             m[col] =  {height, root->data};
-    //         }
-    //     }
+        if(m.find(col) == m.end())m[col] = {height,root->data};
+        else{
+            if(m[col].first <= height){
+                m[col] =  {height, root->data};
+            }
+        }
         
-    //     dfs(root->left, m, col - 1, height + 1);
-    //     dfs(root->right, m, col + 1 ,height + 1);
-    // };
+        dfs(root->left, m, col - 1, height + 1);
+        dfs(root->right, m, col + 1 ,height + 1);
+    };
+    
   public:
     vector <int> bottomView(Node *root){
-        // Your Code Here
-    //     vector<int> ans;
-    //     if(root == nullptr)return ans;
-    //     map<int,pair<int,int>> mp;
+        // DFS
+        vector<int> ans;
+        if(root == nullptr)return ans;
+        map<int,pair<int,int>> mp;
         
-    //     dfs(root,mp,0,0);
+        dfs(root,mp,0,0);
         
-    //     for(auto it : mp){
-    //         ans.push_back(it.second.second);
-    //     }
-    //     return ans;
-    // }
-    
-     map<int,int> um;
-        queue<pair<Node*,int>> q;
-        q.push({root,0});
-        while(!q.empty()){
-            Node *temp=q.front().first;
-            int h=q.front().second;
-            um[h]=temp->data;
-            q.pop();
-            if(temp->left) q.push({temp->left,h-1});
-            if(temp->right) q.push({temp->right,h+1});
+        for(auto it : mp){
+            ans.push_back(it.second.second);
         }
-        vector<int> v;
-        for(auto &it: um){
-            v.push_back(it.second);
-        }
-        return v;  
-        
+        return ans;
     }
+    
+    // BFS
+    //  map<int,int> um;
+    //     queue<pair<Node*,int>> q;
+    //     q.push({root,0});
+    //     while(!q.empty()){
+    //         Node *temp=q.front().first;
+    //         int h=q.front().second;
+    //         um[h]=temp->data;
+    //         q.pop();
+    //         if(temp->left) q.push({temp->left,h-1});
+    //         if(temp->right) q.push({temp->right,h+1});
+    //     }
+    //     vector<int> v;
+    //     for(auto &it: um){
+    //         v.push_back(it.second);
+    //     }
+    //     return v;  
+        
+    // }
 };
 
 //{ Driver Code Starts.
