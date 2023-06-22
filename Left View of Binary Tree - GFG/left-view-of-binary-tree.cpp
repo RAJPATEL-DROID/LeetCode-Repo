@@ -126,28 +126,38 @@ struct Node
     }
 };
  */
-
+void dfs(Node* root,vector<int>& ans,int height){
+    
+    if(root == nullptr)return;
+    
+    if(height == ans.size())ans.push_back(root->data);
+    
+    dfs(root->left,ans,height+1);
+    dfs(root->right,ans,height+1);
+}
 //Function to return a list containing elements of left view of the binary tree.
 vector<int> leftView(Node *root)
 {
     vector<int> ans;
     if(root == NULL)return ans;
     // BFS 
-      queue<Node*> q;
-      q.push(root);
+    //   queue<Node*> q;
+    //   q.push(root);
        
-      while(!q.empty()){
-          int sz = q.size();
+    //   while(!q.empty()){
+    //       int sz = q.size();
            
-          for(int i=0;i < sz; i++){
-              Node* node = q.front();
-              q.pop();
-              if(i==0)ans.push_back(node->data);
+    //       for(int i=0;i < sz; i++){
+    //           Node* node = q.front();
+    //           q.pop();
+    //           if(i==0)ans.push_back(node->data);
                
-              if(node->left)q.push(node->left);
-              if(node->right)q.push(node->right);
-          }
-      }
+    //           if(node->left)q.push(node->left);
+    //           if(node->right)q.push(node->right);
+    //       }
+    //   }
+    
+    dfs(root,ans,0);
     return ans;
 
 }
