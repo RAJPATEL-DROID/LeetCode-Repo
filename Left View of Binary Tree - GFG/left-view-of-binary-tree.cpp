@@ -153,7 +153,7 @@ vector<int> leftView(Node *root)
    if(root==NULL)  return ans;
    queue<Node*> q;
    q.push(root);
-   while(q.size()){
+   while(!q.empty()){
        int a  = q.size();
       for(int i=0;i<a;i++){
            Node* curr = q.front();
