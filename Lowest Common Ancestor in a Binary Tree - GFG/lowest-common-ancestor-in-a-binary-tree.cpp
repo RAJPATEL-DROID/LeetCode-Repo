@@ -44,10 +44,15 @@ class Solution
        if (root == NULL || root->data == p || root->data == q) {
             return root;
         }
+        
+        // We travel to Left Subtree for finding p or q
         Node* left = lca(root->left, p, q);
+        
+        
         Node* right = lca(root->right, p, q);
 
         //result
+        // left is null that means neigther p or q was found in left subtree,so we go to right subtree
         if(left == NULL) {
             return right;
         }
