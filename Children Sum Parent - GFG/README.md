@@ -5,17 +5,17 @@
 <p><br>
 <span style="font-size:18px"><strong>Example 1:</strong></span></p>
 
-<pre style="position: relative;"><span style="font-size:18px"><strong>Input:
+<pre><span style="font-size:18px"><strong>Input:
 </strong>     10
     /
   10 
 <strong>Output: </strong>1<strong>
 Explanation: </strong>Here, every node is sum of
-its left and right child.</span><div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+its left and right child.</span></pre>
 
 <p><span style="font-size:18px"><strong>Example 2:</strong></span></p>
 
-<pre style="position: relative;"><span style="font-size:18px"><strong>Input:
+<pre><span style="font-size:18px"><strong>Input:
 </strong>       1
      /   \
 &nbsp;   4     3
@@ -26,7 +26,7 @@ Explanation: </strong>Here, 1 is the root node
 and 4, 3 are its child&nbsp;nodes. 4 + 3 =
 7 which is not equal to the value of
 root node. Hence, this tree does not
-satisfy the given conditions.</span><div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+satisfy the given conditions.</span></pre>
 
 <p><br>
 <span style="font-size:18px"><strong>Your Task:</strong><br>
