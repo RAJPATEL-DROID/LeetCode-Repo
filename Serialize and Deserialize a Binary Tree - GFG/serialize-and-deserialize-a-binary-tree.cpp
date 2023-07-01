@@ -103,9 +103,6 @@ class Solution
         q.push(root);
         
         while(!q.empty()){
-            int sz =q.size();
-            
-            for(int i=0;i< sz; i++){
                 Node* temp = q.front(); q.pop();
                 
                 if(temp == NULL){
@@ -117,7 +114,6 @@ class Solution
                     q.push(temp->left);
                     q.push(temp->right);
                 }
-            }
         }
         return ans;
         
