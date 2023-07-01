@@ -40,11 +40,11 @@ struct Node
 */
 class Solution{
 public:
-    void createMapping(int in[], map<int,vector<int>> &nodeToindex, int n){
-        for(int i=0;i<n;i++){
-            nodeToindex[in[i]].push_back(i);
+     void createMapping(int in[], map<int,vector<int>> &nodeToindex, int n){
+            for(int i=0;i<n;i++){
+                nodeToindex[in[i]].push_back(i);
+            }
         }
-    }
 
 
     
@@ -77,8 +77,34 @@ public:
         Node *ans =solve(in,pre,preindex,0,n-1,n,nodeToindex);
         return ans;
     }
-};
 
+    // Node* constructTree(int in[],int inStart,int inEnd,int pre[],int preStart,int preEnd,
+    //     unordered_map<int,int>& mp){
+    //     if(inStart> inEnd || preStart>preEnd)return NULL;
+        
+    //     Node* root = new Node(pre[preStart]);
+    //     int eleIn = mp[root->data];
+    //     int nEle = eleIn - inStart;
+        
+    //     root->left = constructTree(in,inStart,eleIn - 1,pre,preStart + 1,preStart + eleIn,mp);
+    //     root->left = constructTree(in,eleIn + 1,inEnd,pre,preStart + eleIn + 1,preEnd,mp);
+        
+    //     return root;
+    // }
+    // public:
+    // Node* buildTree(int in[],int pre[], int n)
+    // {
+    //     // Code here
+    //     int preStart =0,preEnd = n ;
+    //     int inStart = 0,inEnd = in.size();
+        
+    //     unordered_map<int,int> mp;
+    //     for(int i=0;i<n;i++){
+    //         mp[in[i]] = i;
+    //     }
+    //     return constructTree(in,inStart,inEnd,pre,preStart,preEnd,mp);
+    // }
+};
 
 //{ Driver Code Starts.
 int main()
