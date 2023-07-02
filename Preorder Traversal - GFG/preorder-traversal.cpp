@@ -151,15 +151,36 @@ vector<int> preIterative(Node* root){
         ans.push_back(node->data);
     }
     return ans;
-    
-    
 }
 
 //Function to return a list containing the preorder traversal of the tree.
 vector <int> preorder(Node* root){
     // Your code here
-    vector<int> ans;
+    vector<int> preorder;
     //   preRecursive(root,ans);
-    ans = preIterative(root);
-    return ans;
+    //   ans = preIterative(root);
+    Node* curr = root;
+    
+    while(curr){
+        if(curr->left == NULL){
+            preorder.push_back(curr->data);
+            curr = curr->right;
+        }else{
+            Node* prev = curr->left;
+            
+            while(prev->right && prev->right != curr){
+                prev = prev->right;
+            }
+            
+            if(prev->right == NULL){
+                prev->right = curr;
+                preorder.push_back(curr->data);
+                curr = curr->left;
+            }else{
+                prev->right = NULL;
+                curr = curr->right;
+            }
+        }
+    }
+    return preorder;
 }
