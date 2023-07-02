@@ -34,22 +34,48 @@ class Solution {
     // Function to return a list containing the inorder traversal of the tree.
     vector<int> inOrder(Node* root) {
         // Your code here
-        vector<int> ans;
-        stack<Node*> s;
+        // vector<int> ans;
+        // stack<Node*> s;
+        // Node* curr = root;
+        // while(true){
+        //     if(curr!= NULL){
+        //         s.push(curr);
+        //         curr = curr->left;
+        //     }else{
+        //         if(s.empty())break;
+        //         curr = s.top();
+        //         s.pop();
+        //         ans.push_back(curr->data);
+        //         curr = curr->right;
+        //     }
+        // }
+        // return ans;
+        
+            // Your code here
+        vector<int> inorder;
         Node* curr = root;
-        while(true){
-            if(curr!= NULL){
-                s.push(curr);
-                curr = curr->left;
-            }else{
-                if(s.empty())break;
-                curr = s.top();
-                s.pop();
-                ans.push_back(curr->data);
+        while(curr){
+            if(curr->left == NULL){
+                inorder.push_back(curr->data);
                 curr = curr->right;
+            }else{
+                Node* prev = curr->left;
+                
+                while(prev->right && prev->right != curr){
+                    prev = prev->right;
+                }
+                
+                if(prev->right == NULL){
+                    prev->right = curr;
+                    curr = curr->left;
+                }else{
+                    prev->right = NULL;
+                    inorder.push_back(curr->data);
+                    curr = curr->right;
+                }
             }
         }
-        return ans;
+        return inorder;
     }
 };
 
