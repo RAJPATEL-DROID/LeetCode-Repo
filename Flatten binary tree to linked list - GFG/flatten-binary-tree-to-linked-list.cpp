@@ -103,7 +103,39 @@ class Solution
     {
         //code here
         
-        // O(1)
+              
+// ------------------------------------------RECURSIVE ---------------------------------------------
+        
+    // Just impplementing reverse postorder traversal and making connections
+        // if(root == NULL) return;
+        
+        // flatten(root->right);
+        // flatten(root->left);
+        
+        // root->right = prev;
+        // root->left = NULL;
+        // prev = root;
+        
+// ----------------------------------------- ITERATIVE ----------------------------------------------
+        
+        // stack<Node*>s;
+        // s.push(root);
+        // while(!s.empty()) {
+        //     Node * curr = s.top();
+        //     s.pop();
+        //     if(curr->right) {
+        //         s.push(curr->right);
+        //     }
+        //     if(curr->left){
+        //         s.push(curr->left);
+        //     }
+        //     if(!s.empty()) {
+        //         curr->right = s.top();
+        //     }
+        //     curr->left = NULL;
+        // }
+        
+        // SC : O(1)
         Node* curr = root;
 
         while(curr != NULL){
