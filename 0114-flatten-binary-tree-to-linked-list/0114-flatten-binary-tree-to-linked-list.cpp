@@ -11,21 +11,21 @@
  */
 class Solution {
 public:
-    TreeNode* prev= NULL;
+    // TreeNode* prev= NULL;  // for Recursive Solution
     void flatten(TreeNode* root) {
               
 // ------------------------------------------RECURSIVE ---------------------------------------------
         
     // Just impplementing reverse postorder traversal and making connections
     
-        if(root == NULL) return;
+//         if(root == NULL) return;
         
-        flatten(root->right);
-        flatten(root->left);
+//         flatten(root->right);
+//         flatten(root->left);
         
-        root->right = prev;
-        root->left = NULL;
-        prev = root;
+//         root->right = prev;
+//         root->left = NULL;
+//         prev = root;
         
 // ----------------------------------------- ITERATIVE ----------------------------------------------
         
@@ -48,19 +48,19 @@ public:
         
         
         // SC : O(1)
-//         TreeNode* curr = root;
+        TreeNode* curr = root;
         
-//         while(curr != NULL){
-//             if(curr->left != NULL){
-//                 TreeNode* prev = curr->left;
-//                 while(prev->right){
-//                     prev = prev->right;
-//                 }
-//                 prev->right = curr->right;
-//                 curr->right = curr->left;
-//                 curr->left = NULL;
-//             }
-//             curr = curr->right;
-//         }
+        while(curr != NULL){
+            if(curr->left != NULL){
+                TreeNode* prev = curr->left;
+                while(prev->right){
+                    prev = prev->right;
+                }
+                prev->right = curr->right;
+                curr->right = curr->left;
+                curr->left = NULL;
+            }
+            curr = curr->right;
+        }
     }
 };
