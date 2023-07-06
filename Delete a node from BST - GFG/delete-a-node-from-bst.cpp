@@ -122,7 +122,7 @@ Node *deleteNode(Node *root, int x) {
     if(root->data == x){
         
         if(root->left == nullptr && root->right == nullptr){
-            Node* toDel = root;
+    
             delete root;
             return NULL;
         }else if(root->right){
