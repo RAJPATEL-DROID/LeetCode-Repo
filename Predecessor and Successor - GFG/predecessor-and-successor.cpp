@@ -47,19 +47,26 @@ class Solution
             if(root->key == key)
             {
                 Node* cur= root->left;
+             
+                // Find the JUST SMALLER NO, so go to left of root, and then go as right as possible
+                // so rightmost node of left subtree will be JUST SMALLER than Root(KEY).
                 while(cur )
                 {
                     pre = cur;
                     cur= cur->right;
                 }
+                
+                
                 cur = root->right;
                 while(cur) 
                  {
                      suc= cur;
                      cur= cur->left;
                  }
+                 
                  return ;
             }
+            
             else if(root->key < key)
             {
                 pre= root;
