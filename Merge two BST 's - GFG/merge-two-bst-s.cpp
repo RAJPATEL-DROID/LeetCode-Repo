@@ -104,6 +104,7 @@ class Solution
     vector<int> inorderTraversal(Node* root){
         vector<int> ans;
         Node* curr = root;
+        
         // morris traversal 
         while(curr != NULL){
             if(curr->left == NULL){
