@@ -101,40 +101,64 @@ struct Node {
 class Solution
 {
     public:
-    void insertLeft(Node* root, stack<Node*> &s){
-        while(root){
-        s.push(root);
-        root=root->left;
+    vector<int> inorderTraversal(Node* root){
+        vector<int> ans;
+        Node* curr = root;
+        // morris traversal 
+        while(curr != NULL){
+            if(curr->left == NULL){
+                ans.push_back(curr->data);
+                curr = curr->right;
+            }else{
+                Node* prev = curr->left;
+                while(prev->right != NULL && prev->right != curr){
+                    prev = prev->right;
+                }
+                if(prev->right == NULL){
+                    prev->right =curr;
+                    curr= curr->left;
+                }else{
+                    prev->right =NULL;
+                    ans.push_back(curr->data);
+                    curr = curr->right;
+                }
+            }
+        }
+        return ans;
     }
-    }
+
     //Function to return a list of integers denoting the node 
     //values of both the BST in a sorted order.
     vector<int> merge(Node *root1, Node *root2){
-        stack<Node*> s1,s2;
-        vector<int>ans;
-        insertLeft(root1, s1);
-        insertLeft(root2, s2);
+        // 1. Store in In-Order Traversal of both trees in diff vectors
+        vector<int> tree1 = inorderTraversal(root1);
+        vector<int> tree2 = inorderTraversal(root2);
+
+        // 2. Merge two array/vector
+        vector<int> merged;
+        int i=0,j=0;
+        int n = tree1.size();
+        int m = tree2.size();
+        while(i < n && j < m){
+            if(tree1[i] < tree2[j]){
+                merged.push_back(tree1[i]);
+                i++;
+            }else{
+                merged.push_back(tree2[j]);
+                j++;
+            }
+        }
         
-        while(s1.size() || s2.size()){
-           
-           int a = (s1.size() ? s1.top()->data : INT_MAX);
-           int b = (s2.size() ? s2.top()->data : INT_MAX);
-           
-           if(a<=b){
-               Node* temp = s1.top();
-               s1.pop();
-               ans.push_back(a);
-               insertLeft(temp->right,s1);
-           }else{
-               Node* temp = s2.top();
-               s2.pop();
-               ans.push_back(b);
-               insertLeft(temp->right,s2);
-           }
-           
-       }
-       return ans;
+        while(i< n){
+            merged.push_back(tree1[i++]);
+        }
+
+        while(j < m){
+            merged.push_back(tree2[j++]);
+        }
+        return merged;
     }
+    
 };
 
 //{ Driver Code Starts.
