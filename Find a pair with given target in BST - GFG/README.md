@@ -4,7 +4,7 @@
 
 <p><span style="font-size:18px"><strong>Example 1:</strong></span></p>
 
-<pre style="position: relative;"><span style="font-size:18px"><strong>Input:
+<pre><span style="font-size:18px"><strong>Input:
 &nbsp;       </strong>2<strong>
 </strong>      /   \
 &nbsp;    1     3
@@ -12,11 +12,11 @@ sum = 5
 <strong>Output: </strong>1 
 <strong>Explanation: </strong>
 Nodes with value 2 and 3 sum up to 5.</span>
-<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+</pre>
 
 <p><span style="font-size:18px"><strong>Example 2:</strong></span></p>
 
-<pre style="position: relative;"><span style="font-size:18px"><strong>Input:
+<pre><span style="font-size:18px"><strong>Input:
 </strong>           6
 &nbsp;         /    
 &nbsp;        5     
@@ -28,7 +28,7 @@ Nodes with value 2 and 3 sum up to 5.</span>
 <strong>Output: </strong>0 
 <strong>Explanation: </strong>
 There's no pair that sums up to 2.
-</span><div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+</span></pre>
 
 <p><span style="font-size:18px"><strong>Your Task:</strong><br>
 You don't need to read input or print anything. Your task is to complete the function</span><span style="font-size:18px">&nbsp;<strong>isPairPresent()&nbsp;</strong>that takes <strong>a root node </strong>and a target value as a parameter and returns 1 if there's a pair of Nodes in the BST with values summing up to the target sum, else returns 0.&nbsp;</span></p>
