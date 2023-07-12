@@ -101,10 +101,10 @@ class Solution{
     bool dfs(Node* root,int target,unordered_map<int,int>& m){
         if(root == NULL)return false;
         if(dfs(root->left,target,m))return true;
-        if(m[root->data] <= 0)m[root->data]++;
         if(m.find(target-root->data) != m.end()){
             return true;
         }
+        m[root->data]++;
         if(dfs(root->right,target,m))return true;
         
         return false;
