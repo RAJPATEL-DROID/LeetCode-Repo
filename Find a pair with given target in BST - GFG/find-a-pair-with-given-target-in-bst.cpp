@@ -98,16 +98,20 @@ struct Node {
 class Solution{
   public:
     
-    bool dfs(Node* root,int target,unordered_map<int,int>& m){
-        if(root == NULL)return false;
-        if(dfs(root->left,target,m))return true;
-        if(m.find(target-root->data) != m.end()){
-            return true;
-        }
-        m[root->data]++;
-        if(dfs(root->right,target,m))return true;
+    // bool dfs(Node* root,int target,unordered_map<int,int>& m){
+    void dfs(Node* root,vector<int>& mp){
+        if(root == NULL)return;
+        // if(dfs(root->left,target,m))return true;
+        // if(m.find(target-root->data) != m.end()){
+        //     return true;
+        // }
+        // m[root->data]++;
+        // if(dfs(root->right,target,m))return true;
+        // return false;
         
-        return false;
+        dfs(root->left,mp);
+        mp.push_back(root->data);
+        dfs(root->right,mp);
     }
   
     // root : the root Node of the given BST
@@ -115,10 +119,27 @@ class Solution{
     int isPairPresent(struct Node *root, int target)
     {
     //add code here.
-        unordered_map<int,int> m;
+        // unordered_map<int,int> m;
+        // if(dfs(root,target,m))return 1;
+        // else return 0;
         
-        if(dfs(root,target,m))return 1;
-        else return 0;
+        vector<int> mp;
+        dfs(root,mp);
+        
+        
+        int i=0,j=mp.size()-1;
+        
+        while(i<j){
+            if(mp[i]+mp[j] == target){
+                return true;
+            }else if(mp[i] + mp[j] > target){
+                j--;
+            }else{
+                i++;
+            }
+        }
+        
+        return false;
     }
 };
 
