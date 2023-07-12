@@ -4,10 +4,10 @@ using namespace std;
 # define mod 1000000007
 
 // } Driver Code Ends
-
 class Solution{
     public:
     //You need to complete this fucntion
+    
     long long power(int N,int R)
     {
        //Your code here
@@ -17,6 +17,7 @@ class Solution{
         ans = (ans*ans)%mod;
         return (R%2 == 0)?ans:(N*ans)%mod;
     }
+
 };
 
 //{ Driver Code Starts.
