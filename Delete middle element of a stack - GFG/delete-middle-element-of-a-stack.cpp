@@ -10,25 +10,23 @@ using namespace std;
 class Solution
 {
     public:
-    void del(stack<int>&s,int i){
-        if(i==0){
-            s.pop();
-            return;
-        }
-        
-        // cout<<i<< s.top()<<"\n";
-        int temp = s.top();
-        s.pop();
-        del(s,i-1);
-        s.push(temp);
-        return;
-    }
     //Function to delete middle element of a stack.
     void deleteMid(stack<int>&s, int sizeOfStack)
     {
         // code here.. 
-        int i= sizeOfStack/2;
-        del(s,i);
+        int m = sizeOfStack - ((sizeOfStack+1)/2);   
+        vector<int> tmp;
+        while(m--){
+            tmp.push_back(s.top());
+            s.pop();
+        }
+        
+        s.pop();
+        
+        for(auto it = tmp.rbegin();it != tmp.rend(); it++){
+            s.push(*it);
+        }
+        
         return;
     }
 };
