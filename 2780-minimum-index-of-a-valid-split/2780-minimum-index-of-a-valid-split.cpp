@@ -58,7 +58,8 @@ public:
         
 //     }
     int minimumIndex(vector<int>& nums) {
-        //find the majority element 
+        //find the majority element usin Booyer-Moore MajorityVoting Algo
+        // https://gregable.com/2013/10/majority-vote-algorithm-find-majority.html
         int majority = nums[0], count = 0;
         for(auto n: nums){
             if(n == majority) count++;
