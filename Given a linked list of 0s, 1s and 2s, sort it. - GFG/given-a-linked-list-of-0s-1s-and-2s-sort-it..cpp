@@ -36,35 +36,35 @@ class Solution
     Node* segregate(Node *head) {
         
         // Add code here
-        int one=0,zero=0,two=0;
         Node* temp = head;
-        while(temp!=NULL){
-            if(temp->data == 0)zero++;
-            else if(temp->data == 1)one++;
-            else two++;
+        int zero=0;
+        int ones=0;
+        while(temp != NULL){
+            if(temp->data == 0)zero++;    
+            if(temp->data == 1)ones++;
+            temp = temp->next;
+            
+        }
+        
+        temp = head;
+        while(temp != NULL){
+            if(zero > 0){
+                temp->data = 0;
+                zero--;
+                
+            }else if(ones > 0){
+                temp->data = 1;
+                ones--;
+                
+            }else{
+                temp->data = 2;
+            }
             
             temp = temp->next;
         }
         
-        temp = head;
-        int n = one+zero+two;
-        while(n--){
-            if(zero !=0){
-                temp->data = 0;
-                temp = temp->next;
-                zero--;
-            }else if(one != 0){
-                temp->data = 1;
-                temp = temp->next;
-                one--;
-            }else{
-                temp->data = 2;
-                temp = temp->next;
-                two--;
-            }
-        }
-        
         return head;
+        
     }
 };
 
