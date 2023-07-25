@@ -131,34 +131,37 @@ vector<int> findSpiral(Node *root)
 {
     //Your code here
     vector<int> ans;
-    if(root==NULL)return ans;
-    queue<Node*> q;
-    bool reverse =false;
-    q.push(root);
+    if(root == NULL)return ans;
+    bool reverse = false;
     
-    while(q.size()!=0){
+    queue<Node*> q;
+    q.push(root);
+    stack<int> s;
+    
+    while(!q.empty()){
         int sz = q.size();
         
-        stack<int> s;
-        
-        for(int i=0;i < sz;i++){
-            Node* node = q.front(); q.pop();
+        for(int i =0; i < sz; i++){
             
-            if(reverse== true){
-                ans.push_back(node->data);
+            Node* temp = q.front();q.pop();
+            
+            if(reverse == true){
+                ans.push_back(temp->data);
             }else{
-                s.push(node->data);
+                s.push(temp->data);
             }
-            if(node->left != NULL)q.push(node->left);
-            if(node->right != NULL)q.push(node->right);
+            
+            if(temp->left)q.push(temp->left);
+            if(temp->right)q.push(temp->right);
+            
         }
-    
-        while(s.size() >0){
+        
+        while(s.size()){
             ans.push_back(s.top());
             s.pop();
         }
         reverse = !reverse;
     }
+    
     return ans;
 }
-
