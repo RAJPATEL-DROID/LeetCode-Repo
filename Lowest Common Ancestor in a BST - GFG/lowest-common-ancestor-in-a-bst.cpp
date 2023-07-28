@@ -23,21 +23,22 @@ class Solution{
         {
             // code here
             if(n1 > n2){
-                n1 = n1^n2;
-                n2 = n2^n1;
-                n1 = n1^n2;
+                n1  =n1 ^ n2;
+                n2 = n2 ^ n1;
+                n1 = n1 ^ n2;
             }
-            if(root==NULL|| (root->data == n1 || root->data == n2) || (root->data > n1 && root->data < n2)){
+            
+            if ( (root== nullptr) || (root->data == n1 || root->data == n2) || (root->data > n1 && root->data < n2) ){
                 return root;
             }
             
-            if(n1 < root->data && n2 < root->data ){
-                return LCA(root->left,n1,n2);
+            if(root->data > n1 && root->data > n2){
+               return  LCA(root->left,n1,n2);
             }else{
                 return LCA(root->right,n1,n2);
             }
+            
         }
-
 };
 
 
