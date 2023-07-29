@@ -8,7 +8,25 @@ public:
             }
         }
     }
-
+    
+    void bfs(int node,vector<vector<int>>& isConnected,vector<bool>& vis){
+        queue<int> q;
+        q.push(node);
+        vis[node] = true;
+        
+        while(!q.empty()){
+            node = q.front();
+            q.pop();
+            
+            for(int i=0;i < isConnected.size(); i++){
+                if(isConnected[node][i] && !vis[i]){
+                    q.push(i);
+                    vis[i] = true;
+                }
+            }
+        }
+    }
+    
     int findCircleNum(vector<vector<int>>& isConnected) {
         int n = isConnected.size();
         int numberOfComponents = 0;
@@ -17,7 +35,9 @@ public:
         for (int i = 0; i < n; i++) {
             if (!visit[i]) {
                 numberOfComponents++;
-                dfs(i, isConnected, visit);
+                // dfs(i, isConnected, visit);
+                bfs(i, isConnected, visit);
+
             }
         }
 
