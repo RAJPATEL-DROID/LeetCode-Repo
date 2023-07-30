@@ -19,13 +19,34 @@ class Solution {
         
         return false;
     };
+    
+    bool bfs(vector<int> adj[] ,int j,vector<int>& vis){
+        queue<int> q;
+        q.push(j);
+        while(!q.empty()){
+            int curr =q.front();
+            q.pop();
+            if(vis[curr] == 1)return true;
+            
+            vis[curr] = 1;
+            for(int i=0; i< adj[curr].size(); i++){
+                int conn = adj[curr][i];
+                if(vis[conn] == 1)continue;
+                q.push(conn);
+            }
+        }
+        
+        return false;
+    }
+    
     // Function to detect cycle in an undirected graph.
     bool isCycle(int V, vector<int> adj[]) {
         // Code here
         vector<int> vis(V,0);
         for(int i=0; i< V; i++){
             if(vis[i] == 0){
-                if(dfs(adj,i,-1,vis)){
+                // if(dfs(adj,i,-1,vis)){
+                if(bfs(adj,i,vis)){
                     return true;
                 }
             }
