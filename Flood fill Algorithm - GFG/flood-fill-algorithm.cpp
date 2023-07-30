@@ -19,7 +19,7 @@ public:
         int n = image.size();
         int m = image[0].size();
         int ini=image[sr][sc];
-        if(image[sr][sc] == newColor)return image;
+        if(ini == newColor)return image;
         // DFS
         dfs(sr,sc,image,ini,newColor,n,m);
         return image;
