@@ -5,11 +5,11 @@ using namespace std;
 // } Driver Code Ends
 class Solution {
   public:
-    bool bfs(vector<int> adj[] ,int curr,int parent,vector<int>& vis){
+    bool dfs(vector<int> adj[] ,int curr,int parent,vector<int>& vis){
         vis[curr] = 1;
         for(int i=0; i< adj[curr].size(); i++){
             if(!vis[ adj[curr][i] ]){
-                if(bfs(adj,adj[curr][i],curr,vis)){
+                if(dfs(adj,adj[curr][i],curr,vis)){
                     return true;
                 }
             }else if(parent != adj[curr][i]){
@@ -25,7 +25,7 @@ class Solution {
         vector<int> vis(V,0);
         for(int i=0; i< V; i++){
             if(vis[i] == 0){
-                if(bfs(adj,i,-1,vis)){
+                if(dfs(adj,i,-1,vis)){
                     return true;
                 }
             }
