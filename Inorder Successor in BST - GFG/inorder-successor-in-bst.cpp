@@ -115,9 +115,8 @@ class Solution{
         //Your code here
         
         Node* ans = NULL;
-        int n = x->data;
         while(root != NULL){
-            if(root->data > n){
+            if(root->data > x->data ){
                 ans = root;
                 root = root->left;
             }else{
