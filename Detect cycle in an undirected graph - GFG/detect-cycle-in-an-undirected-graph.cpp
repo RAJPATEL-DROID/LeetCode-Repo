@@ -29,10 +29,10 @@ class Solution {
             if(vis[curr] == 1)return true;
             
             vis[curr] = 1;
-            for(int i=0; i< adj[curr].size(); i++){
-                int conn = adj[curr][i];
-                if(vis[conn] == 1)continue;
-                q.push(conn);
+            for(auto it : adj[curr]){
+                // int conn = adj[curr][i];
+                if(vis[it] == 1)continue;
+                q.push(it);
             }
         }
         
