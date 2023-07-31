@@ -7,12 +7,12 @@ class Solution {
   public:
     bool dfs(vector<int> adj[] ,int curr,int parent,vector<int>& vis){
         vis[curr] = 1;
-        for(int i=0; i< adj[curr].size(); i++){
-            if(!vis[ adj[curr][i] ]){
-                if(dfs(adj,adj[curr][i],curr,vis)){
+        for(auto it :adj[curr]){
+            if(!vis[ it ]){
+                if(dfs(adj,it,curr,vis)){
                     return true;
                 }
-            }else if(parent != adj[curr][i]){
+            }else if(parent != it){
                     return true;
             }
         }
