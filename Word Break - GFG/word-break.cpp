@@ -14,20 +14,38 @@ using namespace std;
 class Solution
 {
 public:
-    int wordBreak(string A, vector<string> &B) {
-        //code here
-        int n = A.size();
-        vector<int>dp(n+1,0);
-        dp[0] = 1;
-        for(int i = 1;i<=n;i++){
-            for(int j = 0;j<i;j++){
-                if(dp[j] && find(B.begin(),B.end(),A.substr(j,i-j))!=B.end()){
-                    dp[i] = true;
-                    break;
+    int solve(int id,string& A,vector<string>& B){
+        string ans = "";
+    
+        if(id>=A.size()){
+            return 1;
+        }
+        for(int i = id;i<A.size();i++){
+            ans += A[i];
+            if(find(B.begin(),B.end(),ans) != B.end()){
+                if(1 and solve(i+1,A,B)){
+                    return true;
                 }
             }
         }
-        return dp[n];
+        return 0;
+    }
+    int wordBreak(string A, vector<string> &B) {
+        //code here
+        // int n = A.size();
+        // vector<int>dp(n+1,0);
+        // dp[0] = 1;
+        // for(int i = 1;i<=n;i++){
+        //     for(int j = 0;j<i;j++){
+        //         if(dp[j] && find(B.begin(),B.end(),A.substr(j,i-j))!=B.end()){
+        //             dp[i] = true;
+        //             break;
+        //         }
+        //     }
+        // }
+        // return dp[n];
+        
+        return solve(0,A,B);
     }
 };
 
