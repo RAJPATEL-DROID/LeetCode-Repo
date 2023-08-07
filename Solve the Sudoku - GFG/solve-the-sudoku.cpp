@@ -13,15 +13,14 @@ using namespace std;
 class Solution 
 {
     public:
-    // Function To valiate current situation of Sudoku Grid
-    bool isValid(int row,int col,int num,int grid[N][N]){
-        for(int i=0;i<9;i++){
-            if(grid[i][col] == num)return false;
-            
-            if(grid[row][i] == num)return false;
-            
-            if(grid[3*(row/3) + i/3][3*(col/3) + i%3] == num)return false;
+    bool isValid(int row,int col,int k,int grid[N][N]){
+        
+        for(int i=0;i< 9 ;i++){
+            if(grid[i][col] == k)return false;
+            if(grid[row][i] == k)return false;
+            if(grid[3*(row/3) + i/3 ][3*(col/3) + i%3] == k)return false;
         }
+        
         return true;
     }
     
@@ -29,17 +28,18 @@ class Solution
     bool SolveSudoku(int grid[N][N])  
     { 
         // Your code here
-        for(int i=0;i<9;i++){
-            for(int j =0;j < 9;j++){
+        
+        for(int i=0;i< 9;i++){
+            for(int j=0;j< 9; j++){
                 if(grid[i][j] == 0){
-                    
-                    for(int k=1;k<=9;k++){
+                    for(int k=1;k<=9; k++){
                         if(isValid(i,j,k,grid)){
-                           grid[i][j] = k;
-                        
+                            grid[i][j] = k;
+                            
                             if(SolveSudoku(grid))return true;
-                        
+                            
                             grid[i][j] = 0;
+                            
                         }
                     }
                     return false;
@@ -53,10 +53,11 @@ class Solution
     void printGrid (int grid[N][N]) 
     {
         // Your code here 
-        for(int i =0;i<9;i++){
-            for(int j =0;j < 9; j++){
+        for(int i=0;i<9;i++){
+            for(int j=0;j<9; j++){
                 cout<<grid[i][j]<<" ";
             }
+            // cout<<"\n";
         }
     }
 };
