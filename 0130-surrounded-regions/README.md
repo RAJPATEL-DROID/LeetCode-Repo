@@ -5,20 +5,20 @@
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 <img alt="" src="https://assets.leetcode.com/uploads/2021/02/19/xogrid.jpg" style="width: 550px; height: 237px;">
-<pre><strong>Input:</strong> board = [["X","X","X","X"],["X","O","O","X"],["X","X","O","X"],["X","O","X","X"]]
+<pre style="position: relative;"><strong>Input:</strong> board = [["X","X","X","X"],["X","O","O","X"],["X","X","O","X"],["X","O","X","X"]]
 <strong>Output:</strong> [["X","X","X","X"],["X","X","X","X"],["X","X","X","X"],["X","O","X","X"]]
 <strong>Explanation:</strong> Notice that an 'O' should not be flipped if:
 - It is on the border, or
 - It is adjacent to an 'O' that should not be flipped.
 The bottom 'O' is on the border, so it is not flipped.
 The other three 'O' form a surrounded region, so they are flipped.
-</pre>
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
 
 <p><strong class="example">Example 2:</strong></p>
 
-<pre><strong>Input:</strong> board = [["X"]]
+<pre style="position: relative;"><strong>Input:</strong> board = [["X"]]
 <strong>Output:</strong> [["X"]]
-</pre>
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
 
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
