@@ -10,17 +10,16 @@ using namespace std;
 class Solution {
   public:
   
-    void solve(vector<vector<int>>& grid,int i,int j,string& path,char dir){
-        
-        if (i < 0 || i >= grid.size() || j < 0 || j >= grid[0].size() || !grid[i][j]) return;
-        grid[i][j] = 0;
-        path.push_back(dir);
-        solve(grid,i+1,j,path,'D');
-        solve(grid,i-1,j,path,'U');
-        solve(grid,i,j-1,path,'L');
-        solve(grid,i,j+1,path,'R');
-        path.push_back('X');
-    }
+  void solve(vector<vector<int>>& grid,int i,int j,string& path,char c){
+      if (i < 0 || i >= grid.size() || j < 0 || j >= grid[0].size() || !grid[i][j]) return;
+      grid[i][j] = 0;
+      path.push_back(c);
+      solve(grid,i-1,j,path,'U');
+      solve(grid,i+1,j,path,'D');
+      solve(grid,i,j-1,path,'L');
+      solve(grid,i,j+1,path,'R');
+      path.push_back('X');
+  }
     int countDistinctIslands(vector<vector<int>>& grid) {
         // code here
         unordered_set<string> st;
@@ -35,6 +34,7 @@ class Solution {
         }
         return st.size();
     }
+    
 };
 
 
