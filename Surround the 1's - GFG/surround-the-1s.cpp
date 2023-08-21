@@ -16,29 +16,15 @@ public:
         for(int i=0; i < matrix.size(); i++){
             int cnt = 0;
             for(int j =0 ; j< matrix[i].size();j++){
-                if(matrix[i][j] == 1){
-                    if(i >= 1 && matrix[i-1][j] == 0){
-                        cnt++;
-                    }   
-                    if(j >= 1 && matrix[i][j-1] == 0){
-                        cnt++;
-                    }
-                    if(i < matrix.size()-1 && matrix[i+1][j] == 0){
-                        cnt++;
-                    }
-                    if(j < matrix[i].size()-1 && matrix[i][j+1] == 0){
-                        cnt++;
-                    }
-                    if(i >= 1 && j >=1 && matrix[i-1][j-1] == 0){
-                        cnt++;
-                    }
-                    if(i < matrix.size()-1  && j < matrix[i].size()-1 && matrix[i+1][j+1] == 0){
-                        cnt++;
-                    }
-                    if(i >= 1 && j < matrix[i].size()-1 && matrix[i-1][j+1] == 0){
-                        cnt++;
-                    }
-                    if(j >= 1 && i < matrix.size()-1  &&  matrix[i+1][j-1] == 0){
+                
+                if(matrix[i][j] == 0)continue;
+                cnt =0;
+                int r[] = {-1,-1,-1,0,1,1,1,0};
+                int c[] = {-1,0,1,1,1,0,-1,-1};
+                for(int k =0; k < 8 ;k++){
+                    int row = i + r[k];
+                    int col = j + c[k];
+                    if(row >=0 && row < matrix.size() && col >= 0 && col < matrix[0].size() && matrix[row][col] == 0){
                         cnt++;
                     }
                 }
@@ -46,7 +32,6 @@ public:
                     // cout<<i<<" "<<j<<" "<<cnt<<"\n";
                     ans++;
                 }
-                cnt=0;
             }
         }
         return ans;
