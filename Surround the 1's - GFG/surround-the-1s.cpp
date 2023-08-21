@@ -46,7 +46,7 @@ public:
                     // cout<<i<<" "<<j<<" "<<cnt<<"\n";
                     ans++;
                 }
-                    cnt=0;
+                cnt=0;
             }
         }
         return ans;
