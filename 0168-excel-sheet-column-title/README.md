@@ -2,7 +2,7 @@
 
 <p>For example:</p>
 
-<pre style="position: relative;">A -&gt; 1
+<pre>A -&gt; 1
 B -&gt; 2
 C -&gt; 3
 ...
@@ -10,26 +10,26 @@ Z -&gt; 26
 AA -&gt; 27
 AB -&gt; 28 
 ...
-<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+</pre>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
-<pre style="position: relative;"><strong>Input:</strong> columnNumber = 1
+<pre><strong>Input:</strong> columnNumber = 1
 <strong>Output:</strong> "A"
-<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+</pre>
 
 <p><strong class="example">Example 2:</strong></p>
 
-<pre style="position: relative;"><strong>Input:</strong> columnNumber = 28
+<pre><strong>Input:</strong> columnNumber = 28
 <strong>Output:</strong> "AB"
-<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+</pre>
 
 <p><strong class="example">Example 3:</strong></p>
 
-<pre style="position: relative;"><strong>Input:</strong> columnNumber = 701
+<pre><strong>Input:</strong> columnNumber = 701
 <strong>Output:</strong> "ZY"
-<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+</pre>
 
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
