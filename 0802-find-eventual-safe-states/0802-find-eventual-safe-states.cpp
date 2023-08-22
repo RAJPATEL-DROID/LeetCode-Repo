@@ -50,20 +50,15 @@
 class Solution {
 public:
     bool dfs(int node, vector<vector<int>>& adj, vector<bool>& visit, vector<bool>& pathVisit) {
-        // If the node is already in the stack, we have a cycle.
-        if (pathVisit[node]) {
-            return true;
-        }
-        if (visit[node]) {
-            return false;
-        }
         // Mark the current node as visited and part of current recursion stack.
         visit[node] = true;
         pathVisit[node] = true;
         for (auto neighbor : adj[node]) {
-            if (dfs(neighbor, adj, visit, pathVisit)) {
-                return true;
-            }
+            if(!visit[neighbor]){
+                if (dfs(neighbor, adj, visit, pathVisit)) {
+                    return true;
+                }
+            }else if(pathVisit[neighbor])return true;
         }
         // Remove the node from the stack.
         pathVisit[node] = false;
