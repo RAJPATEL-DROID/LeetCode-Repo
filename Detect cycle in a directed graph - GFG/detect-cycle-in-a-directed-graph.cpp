@@ -5,36 +5,62 @@ using namespace std;
 // } Driver Code Ends
 class Solution {
   public:
+  bool dfs(int i,vector<int> adj[],int vis[],int pathVis[]){
+      pathVis[i] = 1;
+      vis[i] = 1;
+      
+      for(int it:adj[i]){
+          if(!vis[it]){
+              if(dfs(it,adj,vis,pathVis))return true;
+          }else if(pathVis[it])return true;
+      }
+      pathVis[i] = 0;
+      return false;
+  }
     // Function to detect cycle in a directed graph.
     bool isCyclic(int V, vector<int> adj[]) {
         // code here
-        int inDegree[V] = {0};
         
-        for(int i=0;i<V;i++){
-            for(auto it : adj[i]){
-                inDegree[it]++;
+        int vis[V] = {0};
+        
+        int pathVis[V] = {0};
+        
+        for(int i=0;i < V;i++){
+            if(!vis[i]){
+                if(dfs(i,adj,vis,pathVis))return true;
             }
-        }
+        } 
+         return false;
         
-        queue<int> q;
-        for(int i=0;i<V;i++){
-            if(inDegree[i] == 0)q.push(i);
-        }
         
-        int cnt=0;
+        // BFS - Using Kahn Algo
+        // int inDegree[V] = {0};
         
-        while(!q.empty()){
-            int node = q.front();
-            q.pop();
-            cnt++;
+        // for(int i=0;i<V;i++){
+        //     for(auto it : adj[i]){
+        //         inDegree[it]++;
+        //     }
+        // }
+        
+        // queue<int> q;
+        // for(int i=0;i<V;i++){
+        //     if(inDegree[i] == 0)q.push(i);
+        // }
+        
+        // int cnt=0;
+        
+        // while(!q.empty()){
+        //     int node = q.front();
+        //     q.pop();
+        //     cnt++;
             
-            for(auto it: adj[node]){
-                inDegree[it]--;
-                if(inDegree[it] == 0)q.push(it);
-            }
-        }
+        //     for(auto it: adj[node]){
+        //         inDegree[it]--;
+        //         if(inDegree[it] == 0)q.push(it);
+        //     }
+        // }
         
-        return !(cnt == V);
+        // return !(cnt == V);
     }
 };
 
