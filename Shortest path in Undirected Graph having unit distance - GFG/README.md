@@ -4,14 +4,14 @@
 
 <p><span style="font-size:18px"><strong>Example:</strong></span></p>
 
-<pre style="position: relative;"><span style="font-size:18px">Input:
+<pre><span style="font-size:18px">Input:
 n = 9, m= 10
 edges=[[0,1],[0,3],[3,4],[4 ,5]
 ,[5, 6],[1,2],[2,6],[6,7],[7,8],[6,8]] 
 src=0
 Output:
 0 1 2 1 2 3 3 4 4</span>
-<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+</pre>
 
 <p><span style="font-size:18px"><strong>Your Task:</strong></span></p>
 
