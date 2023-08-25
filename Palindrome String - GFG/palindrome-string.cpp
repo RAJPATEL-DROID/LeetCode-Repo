@@ -9,19 +9,23 @@ using namespace std;
 class Solution{
 public:	
 	
-	bool checkPalindrome(string& s,int i){
-	    if( i >= s.length()/2 ) {
-	        return true;
-	    }
-	    if(s[i] != s[s.length()-1-i]){
-	        return false;
-	    }
-	    return checkPalindrome(s,i+1);
-	}
-	int isPalindrome(string S)
+	
+	int isPalindrome(string s)
 	{
 	    // Your code goes here
-	    return checkPalindrome(S,0);
+	    int l = 0;
+	    int r = s.length()-1;
+	    
+	    while(l < r){
+	        if(s[l] != s[r]){
+	            return 0;
+	        }
+	        else{
+	            r--;
+	            l++;
+	        }
+	    }
+	    return 1;
 	}
 
 };
