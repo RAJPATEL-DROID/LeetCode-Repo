@@ -11,9 +11,16 @@ class Solution{
   public:
     int longestKSubstr(string s, int k) {
     // your code here
-        int cnt[26] = {}, distinct = 0, i = 0, j = 0, ans = 0, N = s.size();
+        int cnt[26] = {};
+        int distinct = 0;
+        int i = 0, j = 0;
+        int ans = 0;
+        int N = s.size();
+        
         while (j < N) {
-            distinct += cnt[s[j++]-'a']++ == 0;
+            if(cnt[s[j++]-'a']++ == 0){
+                distinct += 1;
+            }
             while (distinct > k) distinct -= --cnt[s[i++]-'a'] == 0;
             ans = max(ans, j - i);
         }
