@@ -11,21 +11,43 @@ class Solution{
   public:
     int longestKSubstr(string s, int k) {
     // your code here
-        int cnt[26] = {};
-        int distinct = 0;
-        int i = 0, j = 0;
-        int ans = 0;
-        int N = s.size();
+        // int cnt[26] = {};
+        // int distinct = 0;
+        // int i = 0, j = 0;
+        // int ans = 0;
+        // int N = s.size();
         
-        while (j < N) {
-            if(cnt[s[j++]-'a']++ == 0){
-                distinct += 1;
+        // while (j < N) {
+        //     if(cnt[s[j++]-'a']++ == 0){
+        //         distinct += 1;
+        //     }
+        //     while (distinct > k) distinct -= --cnt[s[i++]-'a'] == 0;
+        //     ans = max(ans, j - i);
+        // }
+        // if(distinct == k)return ans;
+        // return -1;
+        unordered_map<char,int> m;
+        int i=0;
+        int j=0;
+        int ans=-1;
+        
+        while(j < s.length()){
+            m[s[j]]++;
+            
+            if(m.size()> k){
+                m[s[i]]--;
+                if(m[s[i]] == 0){
+                    m.erase(s[i]);
+                }
+                i++;
             }
-            while (distinct > k) distinct -= --cnt[s[i++]-'a'] == 0;
-            ans = max(ans, j - i);
+            
+            if(m.size() == k)ans = max(ans,j-i + 1);
+            
+            j++;
         }
-        if(distinct == k)return ans;
-        return -1;
+        
+        return ans;
     }
 };
 
