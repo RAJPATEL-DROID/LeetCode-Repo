@@ -75,17 +75,30 @@ class Solution
         // temp->next = NULL;
         // return head;
         
-        if(head->next == NULL)return head;
-        else{
-            Node* temp = compute(head->next);
-            if(head->data >= temp->data){
-                head->next = temp;
-                return head;
-            }else{
-                return temp;
-            }
-        }
+        // TC O(N) and SC o(1)
+        // if(head->next == NULL)return head;
+        // else{
+        //     Node* temp = compute(head->next);
+        //     if(head->data >= temp->data){
+        //         head->next = temp;
+        //         return head;
+        //     }else{
+        //         return temp;
+        //     }
+        // }
         
+        Node* curr = head;
+        while(curr->next){
+            if(curr->data < curr->next->data){
+                curr->data = curr->next->data;
+                Node* temp = curr->next;
+                curr->next = curr->next->next;
+                delete temp;
+                curr = head;
+            }
+            else curr = curr->next;
+        }
+        return head;
         
     }
     
