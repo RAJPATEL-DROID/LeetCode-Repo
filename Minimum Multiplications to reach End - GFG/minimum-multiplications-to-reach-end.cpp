@@ -15,31 +15,60 @@ class Solution {
     int minimumMultiplications(vector<int>& arr, int start, int end) {
         // code here
         
+        
+        // bfs 
+        // if(start == end)return 0;
+        
+        // int n= arr.size();
+        // vector<int> vis(mod,-1);
+        
+        // vis[start] =0;
+        
+        // queue<int> q;
+        // q.push(start);
+        
+        // while(!q.empty()){
+        //     int curr = q.front();
+        //     q.pop();
+            
+        //     for(int i=0;i < n;i++){
+        //         long long next = (1ll*curr*arr[i])%mod;
+                
+        //         if(vis[next] == -1){
+        //             vis[next] = vis[curr] + 1;
+        //             q.push(next);
+        //             if(next == end)return vis[next];
+        //         }
+        //     }
+        // }
+        // return -1;
+        
+        // djisktra
         if(start == end)return 0;
         
-        int n= arr.size();
-        vector<int> vis(mod,-1);
-        
-        vis[start] =0;
-        
-        queue<int> q;
-        q.push(start);
-        
+        queue<pair<int,int> >q;
+        q.push({start,0});
+        vector<int> dist(100000,1e9);
+        dist[start] =0;
+        int mod = 100000;
         while(!q.empty()){
-            int curr = q.front();
+            auto itr = q.front();
+            int node = itr.first;
+            int dis = itr.second;
             q.pop();
             
-            for(int i=0;i < n;i++){
-                long long next = (1ll*curr*arr[i])%mod;
-                
-                if(vis[next] == -1){
-                    vis[next] = vis[curr] + 1;
-                    q.push(next);
-                    if(next == end)return vis[next];
+            for(auto it : arr){
+                int prod = (it * node) %mod;
+                if(dis + 1 < dist[prod]){
+                    dist[prod] = dis + 1;
+                    if(prod == end)return dis+1;
+                    q.push({prod,dist[prod]});
                 }
             }
         }
+        
         return -1;
+        
     }
 };
 
