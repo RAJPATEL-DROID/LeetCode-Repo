@@ -16,7 +16,7 @@ class Solution {
 	    for(int i=0;i < n; i++){
 	        for(int j=0;j < n;j++){
 	            if(matrix[i][j] == -1){
-	                matrix[i][j] = 1e9;
+	                matrix[i][j] = INT_MAX;
 	            }
 	            if(i == j)matrix[i][j] =0;
 	        }
@@ -25,6 +25,7 @@ class Solution {
 	    for(int k=0; k < n;k++){
 	        for(int i=0;i < n;i++){
 	            for(int j=0;j < n; j++){
+	                if(matrix[i][k] == INT_MAX || matrix[k][j] == INT_MAX)continue;
 	                matrix[i][j] = min(matrix[i][j], matrix[i][k] + matrix[k][j]);
 	            }
 	        }
@@ -32,7 +33,7 @@ class Solution {
 	    
 	    for(int i=0;i < n;i++){
 	        for(int j=0;j < n; j++){
-	            if(matrix[i][j] == 1e9)matrix[i][j] = -1;
+	            if(matrix[i][j] == INT_MAX)matrix[i][j] = -1;
 	        }
 	    }
 	    
