@@ -1,23 +1,18 @@
 class Solution {
 public:
     vector<vector<int>> generate(int n) {
-        vector<vector<int>> ans;
+        vector<vector<int>> ans(n);
         
         for(int i=0;i < n;i++){
-            vector<int> temp;
-            for(int j=0;j <= i; j++){
-                int tmp =0;
-                if(i == 0){
-                    temp.push_back(1);
-                    break;
-                }
-                
-                if(i-1 >= 0 && j-1 >= 0)tmp += ans[i-1][j-1];
-                if(i-1 >=0 && j < i)tmp += ans[i-1][j];
-                temp.push_back(tmp);
+            ans[i].resize(i+1);
+            ans[i][0] = 1;
+            ans[i][i] =1;
+            
+            for(int j=1;j < i; j++){
+                ans[i][j] += ans[i-1][j-1];
+                ans[i][j] += ans[i-1][j];
             }
-            ans.push_back(temp);
         }
-        return ans;
+        return ans;        
     }
 };
