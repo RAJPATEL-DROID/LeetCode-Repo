@@ -15,7 +15,59 @@ struct Node {
     }
 };
 
-Node* insert(Node* node, int data);
+
+// } Driver Code Ends
+// Function to insert a node in a BST.
+
+/*
+struct Node {
+    int data;
+    Node* left;
+    Node* right;
+
+    Node(int val) {
+        data = val;
+        left = right = NULL;
+    }
+};
+*/
+
+class Solution
+{
+    public:
+    Node* search(Node* root,int data){
+        Node* temp = root;
+        while(temp != NULL){
+            if(temp->data == data)return temp;
+            else if(temp->data > data){
+                if(temp->left)temp = temp->left;
+                else break;
+            }else{
+                if(temp->right)temp = temp->right;
+                else break;
+            }
+        }
+        return temp;
+    }
+    Node* insert(Node* node, int data) {
+        
+        // Your code goes here
+        Node* res = search(node,data);
+        if(res->data != data){
+            Node* temp = new Node(data);
+            
+            if(res->data > data){
+                res->left= temp;
+            }else res->right = temp;
+        }
+        
+        return node;
+    }
+
+};
+
+
+//{ Driver Code Starts.
 
 // Function to Build Tree
 Node* buildTree(string str) {
@@ -99,8 +151,8 @@ int main() {
         getline(cin, s);
         int k = stoi(s);
         // getline(cin, s);
-
-        insert(root, k);
+        Solution ob;
+        ob.insert(root, k);
         vector<int> v;
         inorder(root, v);
         for (int i = 0; i < v.size(); i++) cout << v[i] << " ";
@@ -112,36 +164,3 @@ int main() {
 }
 
 // } Driver Code Ends
-
-Node* search(Node* root,int key){
-    Node* temp = root;
-    while(temp){
-        if(temp->data == key){
-            return temp;
-        }else if(temp->data > key){
-            if(temp->left)temp = temp->left;
-            else break;
-        }else{
-            if(temp->right)temp = temp->right;
-            else break;
-        }
-    }
-    return temp;
-}
-// Function to insert a node in a BST.
-Node* insert(Node* root, int key) {
-    // Your code here
-    Node* res = search(root,key);
-    
-    if(res->data != key){
-        
-        Node* temp = new Node(key);
-        if(res->data > key){
-            res->left = temp;
-        }else{
-            res->right = temp;
-        }
-    }
-    
-    return root;
-}
