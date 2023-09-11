@@ -14,18 +14,23 @@ using namespace std;
 
 class Solution{
 public:
-bool solve(int n,int k){
-    if(n%k == 0){
-        return false;
-    }
-    if(n < k)return true;
+// bool solve(int n,int k){
+//     if(n%k == 0){
+//         return false;
+//     }
+//     if(n < k)return true;
     
-    n = n- (n/k);
-    k++;
-    return solve(n,k);
-}
+//     n = n- (n/k);
+//     k++;
+//     return solve(n,k);
+// }
     bool isLucky(int n) {
-        solve(n,2);
+        // solve(n,2);
+        for(int i=2;i<=n;i++){
+           if(n%i==0)return false;
+           n-=n/i;
+       }
+       return true; 
     }
 };
 
