@@ -11,27 +11,25 @@ using namespace std;
 class Solution
 {
     public:
-    vector<long long> ans;
-    //Function to return list containing first n fibonacci numbers.
-    
-    void factorial(int n,int i){
-        if(n==1){
-            ans.push_back(ans[i-1] + ans[i-2]);
+    void solve(int ind,vector<long long>& ans,int n){
+        if(ind == n){
             return;
         }
-        ans.push_back(ans[i-1] + ans[i-2]);
-        factorial(n-1,i+1);
+        ans[ind] = ans[ind-1] + ans[ind-2];
+        solve(ind+1,ans,n);
+        return;
     }
+    //Function to return list containing first n fibonacci numbers.
     vector<long long> printFibb(int n) 
     {
         //code here
-        if(n == 1)return {1};
-        else if(n==2)return {1,1};
+        vector<long long> ans(n);
+        if(n==1)return {1};
+        if(n==2)return {1,1};
+        ans[0] =1;
+        ans[1] = 1;
         
-        ans.push_back(1);
-        ans.push_back(1);
-        
-        factorial(n-2,2);        
+        solve(2,ans,n);
         return ans;
     }
 };
