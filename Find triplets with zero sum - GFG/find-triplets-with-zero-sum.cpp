@@ -33,6 +33,19 @@ class Solution{
         // return 0;
         
         
+        for(int i=0;i < n; i++){
+            
+            unordered_set<int> s;
+            for(int j = i+1; j < n; j++){
+                int x= -(arr[i] + arr[j]);
+                if(s.find(x) != s.end()){
+                    return 1;
+                }else{
+                    s.insert(arr[j]);
+                }
+            }
+        }
+        return 0;
     }
 };
 
