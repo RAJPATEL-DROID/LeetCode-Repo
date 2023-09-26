@@ -13,7 +13,7 @@ class Solution
         priority_queue<pair<int,int>, vector<pair<int,int>>,greater<pair<int,int>>> pq;
         vector<int> vis(V,0);
         
-        pq.push({0,0});
+        pq.push({0,1});
         int sum = 0;
         while(!pq.empty()){
             auto it = pq.top();
