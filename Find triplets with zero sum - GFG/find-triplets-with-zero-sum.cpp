@@ -12,23 +12,27 @@ using namespace std;
 class Solution{
   public:
     //Function to find triplets with zero sum.
-    bool findTriplets(int a[], int n)
+    bool findTriplets(int arr[], int n)
     { 
         //Your code here
-        sort(a,a+n);
-        for(int i=0; i<n; i++){
-            int left=i+1;
-            int right=n-1;
-            while(left<right){
-                int s=a[i]+a[left]+a[right];
-                if(s == 0){
-                   return true;
-                }
-                else if(s > 0) right--;
-                else left++;
-            }
-        }
-        return false;
+        // int l ,r;
+        // sort(arr,arr+n);
+        
+        // for(int i=0;i < n; i++){
+        //     l = i + 1;
+        //     r = n-1;
+        //     while(l < r){
+        //         if(arr[i] + arr[l] + arr[r] == 0){
+        //             return 1;
+        //         }else if(arr[i] + arr[l] + arr[r] > 0){
+        //             r--;
+        //         }else 
+        //             l++;
+        //     }
+        // }
+        // return 0;
+        
+        
     }
 };
 
