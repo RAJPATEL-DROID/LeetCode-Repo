@@ -8,17 +8,35 @@ class Solution{
     public:
     //Function to find if there exists a triplet in the 
     //array A[] which sums up to X.
-    bool find3Numbers(int A[], int n, int X)
+    bool find3Numbers(int a[], int n, int X)
     {
         //Your Code Here
-        unordered_map<int,int> m;
-        for(int i=0;i < n; i++){
-            for(int j=i+1; j < n; j++){
-                if(m[X- A[i] - A[j]] != 0){
-                    return 1;
+        // unordered_map<int,int> m;
+        // for(int i=0;i < n; i++){
+        //     for(int j=i+1; j < n; j++){
+        //         if(m[X- A[i] - A[j]] != 0){
+        //             return 1;
+        //         }
+        //     }
+        //     m[A[i]]++;
+        // }
+        // return false;
+        
+        int l,r;
+        sort(a,a+n);
+        
+        for(int i=0;i<n;i++){
+            l= i+1;
+            r = n-1;
+            while(l<r){
+                if(a[i]+a[l]+a[r]==X){
+                    return true;
+                }else if(a[i]+a[l]+a[r]<X){
+                    l++;
+                }else{
+                    r--;
                 }
             }
-            m[A[i]]++;
         }
         return false;
     }
