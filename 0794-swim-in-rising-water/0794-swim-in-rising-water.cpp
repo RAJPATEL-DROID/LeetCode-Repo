@@ -63,14 +63,25 @@ public:
     int swimInWater(vector<vector<int>>& grid) {
         int n = grid.size();
         vector<vector<int>> vis(n,vector<int>(n));
-        int minReq = max({2*(n-1), grid[0][0], grid[n-1][n-1]});
-        for(int time = minReq; time < n*n; time++){
-            if(dfs(grid,vis,0,0,time)) return time;
+        int l= max({2*(n-1), grid[0][0], grid[n-1][n-1]});
+        int r = n*n -1;
+        // for(int time = minReq; time < n*n; time++){
+        //     if(dfs(grid,vis,0,0,time)) return time;
+        //     for_each(begin(vis), end(vis),[](auto& v) {
+        //         fill(begin(v),end(v),0);
+        //     });
+        // }        
+        while(l <= r){
+            int mid = (l + r) /2;
+            if(dfs(grid,vis,0,0,mid))r = mid-1;
+            else {
+                l = mid+1;
+            }
             for_each(begin(vis), end(vis),[](auto& v) {
                 fill(begin(v),end(v),0);
             });
-        }        
-        return n*n;
+        }
+        return l;
     }
 
     int UnionFind(vector<vector<int>>& grid){
