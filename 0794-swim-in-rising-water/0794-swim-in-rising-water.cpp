@@ -49,7 +49,31 @@ public:
 };
 class Solution {
 public:
+    bool dfs(vector<vector<int>>& grid,vector<vector<int>>& vis,int i,int j,int time){
+        int n = grid.size();
+        int dir[5] = {-1,0,1,0,-1};
+        if(i < 0 || j < 0 || i >= n || j>= n || vis[i][j] || grid[i][j] > time)return false;
+        if(i == n-1 && j == n-1)return true;
+        vis[i][j] = true;
+        for(int k = 0; k <4; k++){
+            if(dfs(grid,vis,i + dir[k], j + dir[k+1],time))return true;
+        }
+        return false;
+    }
     int swimInWater(vector<vector<int>>& grid) {
+        int n = grid.size();
+        vector<vector<int>> vis(n,vector<int>(n));
+        int minReq = max({2*(n-1), grid[0][0], grid[n-1][n-1]});
+        for(int time = minReq; time < n*n; time++){
+            if(dfs(grid,vis,0,0,time)) return time;
+            for_each(begin(vis), end(vis),[](auto& v) {
+                fill(begin(v),end(v),0);
+            });
+        }        
+        return n*n;
+    }
+
+    int UnionFind(vector<vector<int>>& grid){
         int n= grid.size();
         DisjointSet ds(n*n);
         pair<int,int> locations[n*n];
@@ -82,6 +106,5 @@ public:
         }
 
         return n*n - 1;
-
     }
 };
