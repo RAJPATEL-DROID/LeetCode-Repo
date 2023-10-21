@@ -1,6 +1,8 @@
 class Solution {
 public:
     int constrainedSubsetSum(vector<int>& nums, int k) {
+
+        // TC: O(N*log N) , SC : O(N)
         // priority_queue<pair<int,int>> maxHeap;
         // maxHeap.push({nums[0],0});
         // int ans = nums[0];
@@ -14,6 +16,7 @@ public:
         // }
         // return ans;
 
+        // Tc : O(n* log k) , SC : O(N)
         // map<int,int> windows;
         // windows[0] =0;
         // vector<int> dp(nums.size());
@@ -32,12 +35,14 @@ public:
 
         // return *max_element(dp.begin(), dp.end());
 
+
+        // Tc : O(N), SC : o(N)
         int maxSum =nums[0];
         deque<pair<int,int>> dp;
         dp.push_back({nums[0], 0});
 
         for(int i=1;i < nums.size();i++){
-            if(i - dp.front().second > k){
+            if(!dp.empty() && i - dp.front().second > k){
                 dp.pop_front();
             }
             int current  = nums[i];
