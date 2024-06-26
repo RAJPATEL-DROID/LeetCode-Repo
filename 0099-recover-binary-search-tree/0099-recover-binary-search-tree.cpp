@@ -12,7 +12,6 @@
 class Solution {
     private:
     TreeNode *first;
-    TreeNode *middle;
     TreeNode *last;
     TreeNode *prev;
     private:
@@ -24,10 +23,8 @@ class Solution {
         if(prev != NULL && (root->val < prev->val) ){
             if(first == NULL){
                 first = prev;
-                middle = root;
-            } else{
-                last = root;
             }
+            last = root;
         }
         
         prev = root;
@@ -35,15 +32,13 @@ class Solution {
     }
 public:
     void recoverTree(TreeNode* root) {
-        first = middle = last = NULL;
+        first = last = NULL;
         prev = new TreeNode(INT_MIN);
         
         inorder(root);
         
         if(first && last){
             swap(first->val,last->val);
-        }else if(first && middle){
-            swap(middle->val,first->val);
         }
     }
 };
