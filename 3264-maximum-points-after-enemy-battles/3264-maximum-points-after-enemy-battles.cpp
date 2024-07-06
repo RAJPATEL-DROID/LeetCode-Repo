@@ -54,17 +54,40 @@ public:
 
         // return points++;
 
+        // TC : O(N)
+        // long sum=0;
+        // int mini=INT_MAX;
+        // for(int i=0;i<e.size();i++){
+        //     mini=min(mini,e[i]);
+        //     sum+=e[i];
+        // }
+        // sum-=mini;
+        // if(mini> ce){
+        //     return 0;
+        // }
+        // return (long)(sum+ce)/mini;
 
-        long sum=0;
-        int mini=INT_MAX;
-        for(int i=0;i<e.size();i++){
-            mini=min(mini,e[i]);
-            sum+=e[i];
+
+        // TC : O(nlogn)
+        sort(e.begin(),e.end());
+        
+        if(e[0] > ce)return 0;
+        if(e.size() == 1)
+        {
+            return ce/e[0];
         }
-        sum-=mini;
-        if(mini> ce){
-            return 0;
+        long long point=0;
+        int j=e.size()-1;
+
+        while(j >= 0){
+            if(e[0] <= ce){
+                point += (ce)/e[0];
+                ce %= e[0];
+            }else{
+                ce = ce + e[j];
+                j--;
+            }
         }
-        return (long)(sum+ce)/mini;
+        return point;
     }
 };
