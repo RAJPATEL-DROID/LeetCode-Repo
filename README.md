@@ -50,4 +50,12 @@ This Repository contains the Problems solution from Leetcode and GeeksForGeeks p
 |  |
 | ------- |
 | [1616-minimum-difference-between-largest-and-smallest-value-in-three-moves](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/1616-minimum-difference-between-largest-and-smallest-value-in-three-moves) |
+## Math
+|  |
+| ------- |
+| [1642-water-bottles](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/1642-water-bottles) |
+## Simulation
+|  |
+| ------- |
+| [1642-water-bottles](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/1642-water-bottles) |
 <!---LeetCode Topics End-->
