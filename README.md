@@ -42,6 +42,7 @@ This Repository contains the Problems solution from Leetcode and GeeksForGeeks p
 |  |
 | ------- |
 | [1616-minimum-difference-between-largest-and-smallest-value-in-three-moves](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/1616-minimum-difference-between-largest-and-smallest-value-in-three-moves) |
+| [1720-crawler-log-folder](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/1720-crawler-log-folder) |
 ## Greedy
 |  |
 | ------- |
@@ -58,4 +59,12 @@ This Repository contains the Problems solution from Leetcode and GeeksForGeeks p
 |  |
 | ------- |
 | [1642-water-bottles](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/1642-water-bottles) |
+## String
+|  |
+| ------- |
+| [1720-crawler-log-folder](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/1720-crawler-log-folder) |
+## Stack
+|  |
+| ------- |
+| [1720-crawler-log-folder](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/1720-crawler-log-folder) |
 <!---LeetCode Topics End-->
