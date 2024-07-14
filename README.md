@@ -53,6 +53,7 @@ This Repository contains the Problems solution from Leetcode and GeeksForGeeks p
 ## Sorting
 |  |
 | ------- |
+| [0726-number-of-atoms](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/0726-number-of-atoms) |
 | [1616-minimum-difference-between-largest-and-smallest-value-in-three-moves](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/1616-minimum-difference-between-largest-and-smallest-value-in-three-moves) |
 | [2846-robot-collisions](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/2846-robot-collisions) |
 ## Math
@@ -68,15 +69,21 @@ This Repository contains the Problems solution from Leetcode and GeeksForGeeks p
 ## String
 |  |
 | ------- |
+| [0726-number-of-atoms](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/0726-number-of-atoms) |
 | [1298-reverse-substrings-between-each-pair-of-parentheses](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/1298-reverse-substrings-between-each-pair-of-parentheses) |
 | [1720-crawler-log-folder](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/1720-crawler-log-folder) |
 | [1818-maximum-score-from-removing-substrings](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/1818-maximum-score-from-removing-substrings) |
 ## Stack
 |  |
 | ------- |
+| [0726-number-of-atoms](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/0726-number-of-atoms) |
 | [0735-asteroid-collision](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/0735-asteroid-collision) |
 | [1298-reverse-substrings-between-each-pair-of-parentheses](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/1298-reverse-substrings-between-each-pair-of-parentheses) |
 | [1720-crawler-log-folder](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/1720-crawler-log-folder) |
 | [1818-maximum-score-from-removing-substrings](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/1818-maximum-score-from-removing-substrings) |
 | [2846-robot-collisions](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/2846-robot-collisions) |
+## Hash Table
+|  |
+| ------- |
+| [0726-number-of-atoms](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/0726-number-of-atoms) |
 <!---LeetCode Topics End-->
