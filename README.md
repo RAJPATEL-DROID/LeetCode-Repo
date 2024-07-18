@@ -21,6 +21,7 @@ This Repository contains the Problems solution from Leetcode and GeeksForGeeks p
 |  |
 | ------- |
 | [1431-all-ancestors-of-a-node-in-a-directed-acyclic-graph](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/1431-all-ancestors-of-a-node-in-a-directed-acyclic-graph) |
+| [1653-number-of-good-leaf-nodes-pairs](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/1653-number-of-good-leaf-nodes-pairs) |
 | [2217-step-by-step-directions-from-a-binary-tree-node-to-another](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/2217-step-by-step-directions-from-a-binary-tree-node-to-another) |
 ## Breadth-First Search
 |  |
@@ -93,11 +94,13 @@ This Repository contains the Problems solution from Leetcode and GeeksForGeeks p
 ## Tree
 |  |
 | ------- |
+| [1653-number-of-good-leaf-nodes-pairs](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/1653-number-of-good-leaf-nodes-pairs) |
 | [2217-step-by-step-directions-from-a-binary-tree-node-to-another](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/2217-step-by-step-directions-from-a-binary-tree-node-to-another) |
 | [2306-create-binary-tree-from-descriptions](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/2306-create-binary-tree-from-descriptions) |
 ## Binary Tree
 |  |
 | ------- |
+| [1653-number-of-good-leaf-nodes-pairs](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/1653-number-of-good-leaf-nodes-pairs) |
 | [2217-step-by-step-directions-from-a-binary-tree-node-to-another](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/2217-step-by-step-directions-from-a-binary-tree-node-to-another) |
 | [2306-create-binary-tree-from-descriptions](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/2306-create-binary-tree-from-descriptions) |
 <!---LeetCode Topics End-->
