@@ -43,6 +43,7 @@ This Repository contains the Problems solution from Leetcode and GeeksForGeeks p
 ## Array
 |  |
 | ------- |
+| [0053-maximum-subarray](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/0053-maximum-subarray) |
 | [0735-asteroid-collision](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/0735-asteroid-collision) |
 | [1496-lucky-numbers-in-a-matrix](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/1496-lucky-numbers-in-a-matrix) |
 | [1616-minimum-difference-between-largest-and-smallest-value-in-three-moves](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/1616-minimum-difference-between-largest-and-smallest-value-in-three-moves) |
@@ -108,4 +109,12 @@ This Repository contains the Problems solution from Leetcode and GeeksForGeeks p
 |  |
 | ------- |
 | [1496-lucky-numbers-in-a-matrix](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/1496-lucky-numbers-in-a-matrix) |
+## Divide and Conquer
+|  |
+| ------- |
+| [0053-maximum-subarray](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/0053-maximum-subarray) |
+## Dynamic Programming
+|  |
+| ------- |
+| [0053-maximum-subarray](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/0053-maximum-subarray) |
 <!---LeetCode Topics End-->
