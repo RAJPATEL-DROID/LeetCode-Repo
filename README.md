@@ -44,6 +44,7 @@ This Repository contains the Problems solution from Leetcode and GeeksForGeeks p
 |  |
 | ------- |
 | [0053-maximum-subarray](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/0053-maximum-subarray) |
+| [0056-merge-intervals](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/0056-merge-intervals) |
 | [0735-asteroid-collision](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/0735-asteroid-collision) |
 | [1496-lucky-numbers-in-a-matrix](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/1496-lucky-numbers-in-a-matrix) |
 | [1616-minimum-difference-between-largest-and-smallest-value-in-three-moves](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/1616-minimum-difference-between-largest-and-smallest-value-in-three-moves) |
@@ -58,6 +59,7 @@ This Repository contains the Problems solution from Leetcode and GeeksForGeeks p
 ## Sorting
 |  |
 | ------- |
+| [0056-merge-intervals](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/0056-merge-intervals) |
 | [0726-number-of-atoms](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/0726-number-of-atoms) |
 | [1616-minimum-difference-between-largest-and-smallest-value-in-three-moves](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/1616-minimum-difference-between-largest-and-smallest-value-in-three-moves) |
 | [2846-robot-collisions](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/2846-robot-collisions) |
