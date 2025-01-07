@@ -68,6 +68,7 @@ This Repository contains the Problems solution from Leetcode and GeeksForGeeks p
 ## Math
 |  |
 | ------- |
+| [0070-climbing-stairs](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/0070-climbing-stairs) |
 | [1642-water-bottles](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/1642-water-bottles) |
 ## Simulation
 |  |
@@ -121,4 +122,9 @@ This Repository contains the Problems solution from Leetcode and GeeksForGeeks p
 |  |
 | ------- |
 | [0053-maximum-subarray](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/0053-maximum-subarray) |
+| [0070-climbing-stairs](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/0070-climbing-stairs) |
+## Memoization
+|  |
+| ------- |
+| [0070-climbing-stairs](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/0070-climbing-stairs) |
 <!---LeetCode Topics End-->
