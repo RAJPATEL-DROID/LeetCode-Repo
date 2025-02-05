@@ -83,6 +83,7 @@ This Repository contains the Problems solution from Leetcode and GeeksForGeeks p
 | [1298-reverse-substrings-between-each-pair-of-parentheses](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/1298-reverse-substrings-between-each-pair-of-parentheses) |
 | [1720-crawler-log-folder](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/1720-crawler-log-folder) |
 | [1818-maximum-score-from-removing-substrings](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/1818-maximum-score-from-removing-substrings) |
+| [1915-check-if-one-string-swap-can-make-strings-equal](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/1915-check-if-one-string-swap-can-make-strings-equal) |
 | [2217-step-by-step-directions-from-a-binary-tree-node-to-another](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/2217-step-by-step-directions-from-a-binary-tree-node-to-another) |
 ## Stack
 |  |
@@ -97,6 +98,7 @@ This Repository contains the Problems solution from Leetcode and GeeksForGeeks p
 |  |
 | ------- |
 | [0726-number-of-atoms](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/0726-number-of-atoms) |
+| [1915-check-if-one-string-swap-can-make-strings-equal](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/1915-check-if-one-string-swap-can-make-strings-equal) |
 | [2306-create-binary-tree-from-descriptions](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/2306-create-binary-tree-from-descriptions) |
 ## Tree
 |  |
@@ -127,4 +129,8 @@ This Repository contains the Problems solution from Leetcode and GeeksForGeeks p
 |  |
 | ------- |
 | [0070-climbing-stairs](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/0070-climbing-stairs) |
+## Counting
+|  |
+| ------- |
+| [1915-check-if-one-string-swap-can-make-strings-equal](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/1915-check-if-one-string-swap-can-make-strings-equal) |
 <!---LeetCode Topics End-->
