@@ -125,6 +125,7 @@ This Repository contains the Problems solution from Leetcode and GeeksForGeeks p
 | ------- |
 | [0053-maximum-subarray](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/0053-maximum-subarray) |
 | [0070-climbing-stairs](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/0070-climbing-stairs) |
+| [1411-number-of-ways-to-paint-n-3-grid](https://github.com/RAJPATEL-DROID/LeetCode-Repo/tree/master/1411-number-of-ways-to-paint-n-3-grid) |
 ## Memoization
 |  |
 | ------- |
